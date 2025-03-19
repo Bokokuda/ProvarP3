@@ -1,0 +1,9 @@
+2025/03/19-16:57:18.958 161c Reusing MANIFEST C:\Users\Nickolas\Provar\WorkspaceP3\ProvarP3\.chromeProfiles\profile0\Default\IndexedDB\https_awcomputing-37a--testerbox.sandbox.lightning.force.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/03/19-16:57:18.958 161c Recovering log #6
+2025/03/19-16:57:18.960 161c Reusing old log C:\Users\Nickolas\Provar\WorkspaceP3\ProvarP3\.chromeProfiles\profile0\Default\IndexedDB\https_awcomputing-37a--testerbox.sandbox.lightning.force.com_0.indexeddb.leveldb/000006.log 
+2025/03/19-16:57:19.503 161c Compacting 1@1 + 1@2 files
+2025/03/19-16:57:19.523 161c Generated table #9@1: 390 keys, 1140935 bytes
+2025/03/19-16:57:19.523 161c Compacted 1@1 + 1@2 files => 1140935 bytes
+2025/03/19-16:57:19.527 161c compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/03/19-16:57:19.528 161c Delete type=2 #5
+2025/03/19-16:57:19.528 161c Delete type=2 #7
