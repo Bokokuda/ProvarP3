@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testProject guid="a7273dfc-24ec-47b6-993f-1c7be1a47768" selectedBrowserConfigurationName="Full Screen" selectedBrowserProviderDeviceName="Full Screen" selectedBrowserProviderName="Desktop">
+<testProject guid="a7273dfc-24ec-47b6-993f-1c7be1a47768" selectedBrowserConfigurationName="Full Screen" selectedBrowserProviderDeviceName="Full Screen" selectedBrowserProviderName="Desktop" selectedEnvironment="Prod">
   <title>/ProvarTraining/.testproject</title>
   <configPath>config</configPath>
   <testsPath>tests</testsPath>
@@ -7,7 +7,20 @@
   <sourcePath>src</sourcePath>
   <secureStoragePath>.secrets</secureStoragePath>
   <browserDebugPort>0</browserDebugPort>
-  <environments/>
+  <environments>
+    <environment guid="85cdb977-d943-4f06-9719-afd021404b54" name="Prod">
+      <summary/>
+    </environment>
+    <environment guid="8186df84-60d8-4121-840a-27f10ff370a0" name="Staging">
+      <summary/>
+    </environment>
+    <environment guid="33e4963f-47b8-4830-90f3-0d04ba9a2922" name="Tester">
+      <summary/>
+    </environment>
+    <environment guid="077f0775-15c0-4e83-9c58-d4f5764ab005" name="Dev">
+      <summary/>
+    </environment>
+  </environments>
   <variables/>
   <connectionClasses>
     <connectionClass name="sf">
@@ -16,6 +29,10 @@
           <summary/>
           <connectionUrls>
             <connectionUrl secureStorageNodeId="5f9234d7-2a91-464f-a7dc-105cc72b72ad" url="sf:user=nmiller@20250113salesforce.com.testerbox;password={password};environment=SANDBOX;lightningMode=true"/>
+            <connectionUrl envId="33e4963f-47b8-4830-90f3-0d04ba9a2922" envName="Tester" secureStorageNodeId="a6a8b9ac-1bdc-4993-928b-19a1c0962783" url="sf:user=nmiller@20250113salesforce.com.testerbox;password={password};environment=SANDBOX;lightningMode=true"/>
+            <connectionUrl envId="85cdb977-d943-4f06-9719-afd021404b54" envName="Prod" secureStorageNodeId="d52d5881-e53a-4573-87fd-8113d7b889c1" url="sf:user=nmiller@20250113salesforce.com;password={password};environment=PROD_DEV;lightningMode=true"/>
+            <connectionUrl envId="8186df84-60d8-4121-840a-27f10ff370a0" envName="Staging" secureStorageNodeId="15c185f8-d47d-462c-bb84-312afbdd7cad" url="sf:user=nmiller@20250113salesforce.com.copybox;password={password};environment=SANDBOX;lightningMode=true"/>
+            <connectionUrl envId="077f0775-15c0-4e83-9c58-d4f5764ab005" envName="Dev" secureStorageNodeId="a0acadde-ac89-4b69-be93-0d9dd9c84329" url="sf:user=nmiller@20250113salesforce.com.devteambox;password={password};environment=SANDBOX;lightningMode=true"/>
           </connectionUrls>
         </connection>
       </connections>
