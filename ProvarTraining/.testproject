@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testProject guid="a7273dfc-24ec-47b6-993f-1c7be1a47768" selectedBrowserConfigurationName="Full Screen" selectedBrowserProviderDeviceName="Full Screen" selectedBrowserProviderName="Desktop" selectedEnvironment="Prod">
+<testProject guid="a7273dfc-24ec-47b6-993f-1c7be1a47768" selectedBrowserConfigurationName="Full Screen" selectedBrowserProviderDeviceName="Full Screen" selectedBrowserProviderName="Desktop" selectedEnvironment="Dev" selectedEnvironmentGuid="077f0775-15c0-4e83-9c58-d4f5764ab005">
   <title>/ProvarTraining/.testproject</title>
   <configPath>config</configPath>
   <testsPath>tests</testsPath>
