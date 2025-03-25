@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="01837b8e-5b3b-4049-b7f2-52535a034b0d" id="30" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="40dcea60-6547-4249-953e-a28ba5ebd6e9" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">8ed1ef49-514a-49c5-b92f-a3bdb1cc532e</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Veteran_Management</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="381a937f-3bcd-449c-bae9-1526c9ca61d9" name="ApexSoqlQuery" testItemId="4" title="SOQL Query: select Id from Medical_History__c where Name = '{StringNormalize(Related_Medical_History__c)}' limit 1=&gt;Medical_HistoryRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Id from Medical_History__c where Name = '</value>
+              <funcCall id="StringNormalize">
+                <argument id="sourceString">
+                  <value class="variable">
+                    <path element="Related_Medical_History__c"/>
+                  </value>
+                </argument>
+              </funcCall>
+              <value valueClass="string">' limit 1</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">Medical_HistoryRows</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="a4e86761-1e62-4895-aa50-4a8d5a57aa67" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="3" title="Create Object: Medical_History_Document__c=&gt;MedicalHistoryDocumentId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Medical_History_Document__c</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">MedicalHistoryDocumentId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="fc9a4dd1-e233-4a91-a3ff-68e55b968938" id="Related_Medical_History__c">
+          <value class="variable">
+            <path element="Medical_HistoryRows"/>
+            <path element="Id"/>
+          </value>
+        </argument>
+        <argument argId="fc69a944-2406-45b9-a722-94a1806b4987" id="Name">
+          <value class="variable">
+            <path element="Name"/>
+          </value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Medical_History_Document__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Medical_History_Document__c&amp;field=Related_Medical_History__c" name="Related_Medical_History__c" title="Related_Medical_History__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Medical_History_Document__c&amp;field=Name" name="Name" title="Name"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:fc69a944-2406-45b9-a722-94a1806b4987" modelBinding="sf:ui:binding:object?object=Medical_History_Document__c&amp;field=Name" name="Name" passwordVariableAllowed="true" title="Name">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:fc9a4dd1-e233-4a91-a3ff-68e55b968938" modelBinding="sf:ui:binding:object?object=Medical_History_Document__c&amp;field=Related_Medical_History__c" name="Related_Medical_History__c" passwordVariableAllowed="true" title="Related_Medical_History__c">
+      <summary/>
+    </param>
+  </params>
+  <args>
+    <argument id="Name">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Related_Medical_History__c"/>
+  </args>
+</testCase>
