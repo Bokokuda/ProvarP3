@@ -1,0 +1,583 @@
+{
+  "componentId" : "d55e93cd-2c94-44d6-a91c-03fa383fb595",
+  "name" : "/com/site/my/awcomputing-37a/UpdateVeteran",
+  "tagName" : "flowruntime-flow",
+  "parameters" : [ {
+    "name" : "devName",
+    "value" : "UpdateVeteran",
+    "comparisonType" : "equals",
+    "default" : true
+  } ],
+  "type" : "Page",
+  "pageStructureElement" : true,
+  "fieldDetailsElement" : false,
+  "elements" : [ {
+    "componentId" : "c6b87e90-db20-48b8-b7d2-5d3cbd78eb3c",
+    "type" : "component::63f2b168-cabb-426f-9ffb-5397697e02f6",
+    "label" : "FlowruntimeLwcBody",
+    "parameters" : [ {
+      "name" : "flowLabel",
+      "value" : "UpdateVeteran",
+      "comparisonType" : "equals",
+      "default" : true
+    } ],
+    "elements" : [ {
+      "type" : "content",
+      "elements" : [ {
+        "componentId" : "59b04b8f-df95-4e4e-9bcc-2059d70306df",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "First_Name Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "First_Name",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "69a0f092-48c6-4f89-9381-22425e991bc8",
+            "type" : "component::27e2a2bd-5b1b-4a24-95c7-a251f75df8a3",
+            "label" : "First Name",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "STRING",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "First Name",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "First_Name",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "4daf4318-9017-43fd-a1e3-5016ce199090",
+                "type" : "component::5cd71547-c934-470c-9115-a10fe7f0307f",
+                "label" : "FirstName",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "First_Name",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                }, {
+                  "name" : "type",
+                  "value" : "text",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "8315b11c-0714-43f1-89b0-1ff96983547a",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Last_Name Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Last_Name",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "bb6a2b2e-5e5c-4c72-9f13-d29ceae821b6",
+            "type" : "component::27e2a2bd-5b1b-4a24-95c7-a251f75df8a3",
+            "label" : "Last Name",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "STRING",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Last Name",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Last_Name",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "344c3f83-a006-4e70-80f3-43bf7d29bea5",
+                "type" : "component::5cd71547-c934-470c-9115-a10fe7f0307f",
+                "label" : "LastName",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Last_Name",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                }, {
+                  "name" : "type",
+                  "value" : "text",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "f09e09eb-a897-45eb-ad47-27460a3bcbbf",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Email Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Email",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "3db6cdae-643d-488c-945d-86245de2f3c9",
+            "type" : "component::6e6aea06-ccaf-41e0-a92c-7627120be9a7",
+            "label" : "Email",
+            "parameters" : [ {
+              "name" : "label",
+              "value" : "Email",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : true
+            } ],
+            "elements" : [ ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "d1887118-8790-4c5d-92ad-c7668f264f1a",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Phone Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Phone",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "5b2305fb-3d10-4769-a765-110743f8976c",
+            "type" : "component::d74ad907-dd1a-4805-b28f-a17d229edbac",
+            "label" : "Phone",
+            "parameters" : [ {
+              "name" : "label",
+              "value" : "Phone",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : true
+            } ],
+            "elements" : [ ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "0193e9a9-072d-434d-bd0a-11a700a8d4d6",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Date_of_Birth Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Date_of_Birth",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "7a3c8a0d-fa5f-4531-8f94-216e0d3fbc7a",
+            "type" : "component::59191a34-607d-416d-88f9-97b47c6bc59d",
+            "label" : "Date of Birth",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "DATEONLY",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Date of Birth",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Date_of_Birth",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "0e23fe37-045e-4e5a-a18a-ba76920fddbd",
+                "type" : "component::4071451a-bead-4fdb-84bd-30359e065f25",
+                "label" : "DateOfBirth",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Date_of_Birth",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "date",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "86b56edd-aca9-4dca-8d5a-c212f0d703ae",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Credit_Score Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Credit_Score",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "26d94a56-4f80-4d4c-a5bc-72e232ad3b98",
+            "type" : "component::4bf24c6d-3f90-4334-bea9-75091b98a6d9",
+            "label" : "Credit Score",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "NUMBER",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Credit Score",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Credit_Score",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "d5ec596f-217e-4d38-a06d-389ad8f23828",
+                "type" : "component::6106cfd4-3b5c-490e-a7ba-769346ea7053",
+                "label" : "CreditScore",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Credit_Score",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "number",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "c406ba9e-6f02-4a53-be68-da468679fe2d",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Military_Branch Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Military_Branch",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "02d2c8a0-54e5-44e0-ba5e-0ab5f48c85b7",
+            "type" : "component::0898d176-5f2f-4b5d-8dd4-addc06ba6fc5",
+            "label" : "Military Branch",
+            "parameters" : [ {
+              "name" : "label",
+              "value" : "Military Branch",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Military_Branch",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : true
+            } ],
+            "elements" : [ ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "8ebdfee7-496a-4b7f-9105-b4421d1c825d",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Discharge_Status Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Discharge_Status",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "d693a019-5b1d-4288-bef5-e30d04a6f65a",
+            "type" : "component::0898d176-5f2f-4b5d-8dd4-addc06ba6fc5",
+            "label" : "Discharge Status",
+            "parameters" : [ {
+              "name" : "label",
+              "value" : "Discharge Status",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Discharge_Status",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : true
+            } ],
+            "elements" : [ ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "4c7b5c15-0f5f-49fc-af1d-5700fcb6f456",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Military_Service_Start_Date Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Military_Service_Start_Date",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "86e8c521-eb38-479a-b487-9d3d3ec9323e",
+            "type" : "component::59191a34-607d-416d-88f9-97b47c6bc59d",
+            "label" : "Military Service Start Date",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "DATEONLY",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Military Service Start Date",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Military_Service_Start_Date",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "f889f1b5-b55f-4fa4-b7b4-d55365194cd7",
+                "type" : "component::4071451a-bead-4fdb-84bd-30359e065f25",
+                "label" : "MilitaryServiceStartDate",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Military_Service_Start_Date",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "date",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "2b2a2fa1-1ec3-4bd5-aa7a-25bada64887b",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Military_Service_End_Date Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Military_Service_End_Date",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "74ed509a-7aee-4974-b2f8-833900bdf706",
+            "type" : "component::59191a34-607d-416d-88f9-97b47c6bc59d",
+            "label" : "Military Service End Date",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "DATEONLY",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Military Service End Date",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Military_Service_End_Date",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "5c3feb4e-3542-443e-9295-7b6bb1aba975",
+                "type" : "component::4071451a-bead-4fdb-84bd-30359e065f25",
+                "label" : "MilitaryServiceEndDate",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Military_Service_End_Date",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "date",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "componentId" : "b54f09e8-cbc3-44b5-9ece-13d3405f20bd",
+    "type" : "component::1b4c15a5-dc39-4f5b-8b29-472a83409c7c",
+    "label" : "FlowruntimeNavigationBar",
+    "parameters" : [ ],
+    "selectors" : [ {
+      "xpath" : ".//flowruntime-navigation-bar"
+    } ],
+    "elements" : [ {
+      "type" : "content",
+      "elements" : [ {
+        "componentId" : "9bb7ec25-5dc9-48cd-96ee-a35a4f8dae5a",
+        "type" : "component::5c6b2d69-4033-48fd-9f45-8a0f567a8251",
+        "label" : "Next button",
+        "parameters" : [ {
+          "name" : "class",
+          "value" : "slds-button flow-button__NEXT",
+          "comparisonType" : "contains",
+          "locatable" : true,
+          "default" : false
+        }, {
+          "name" : "label",
+          "value" : "Next",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : true
+        } ],
+        "elements" : [ ]
+      }, {
+        "componentId" : "3c093aa3-57a8-46cd-aac2-e2e86965aeb7",
+        "type" : "component::5c6b2d69-4033-48fd-9f45-8a0f567a8251",
+        "label" : "Previous button",
+        "parameters" : [ {
+          "name" : "class",
+          "value" : "slds-button flow-button__BACK",
+          "comparisonType" : "contains",
+          "locatable" : true,
+          "default" : false
+        }, {
+          "name" : "label",
+          "value" : "Previous",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : true
+        } ],
+        "elements" : [ ]
+      }, {
+        "componentId" : "e173957a-b8e9-41b6-b795-6497d2223e9d",
+        "type" : "component::5c6b2d69-4033-48fd-9f45-8a0f567a8251",
+        "label" : "Update button",
+        "parameters" : [ {
+          "name" : "class",
+          "value" : "slds-button flow-button__NEXT",
+          "comparisonType" : "contains",
+          "locatable" : true,
+          "default" : false
+        }, {
+          "name" : "label",
+          "value" : "Update",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : true
+        } ],
+        "elements" : [ ]
+      } ]
+    } ]
+  } ]
+}

@@ -1,0 +1,128 @@
+{
+  "componentId" : "ba3714a7-c453-499e-80b6-103ab964c912",
+  "name" : "/com/site/my/awcomputing-37a/footer",
+  "tagName" : "c-footer",
+  "parameters" : [ ],
+  "type" : "Page",
+  "pageStructureElement" : true,
+  "fieldDetailsElement" : false,
+  "elements" : [ {
+    "componentId" : "29f14a72-261b-4e55-9d0a-9ea7b6f68f62",
+    "type" : "component::b53170fd-7fb6-4481-9aa9-95f88bacd856",
+    "label" : "Footer",
+    "parameters" : [ {
+      "name" : "class",
+      "value" : "footer",
+      "comparisonType" : "contains",
+      "default" : true
+    } ],
+    "elements" : [ {
+      "type" : "content",
+      "elements" : [ {
+        "componentId" : "45b2a9c0-bb69-4c3d-b76c-0cc3532d1389",
+        "type" : "component::a4b4a253-2c0c-4ca8-be55-204f1f9f2d53",
+        "label" : "ProfileButton",
+        "parameters" : [ {
+          "name" : "class",
+          "value" : "footer-link",
+          "comparisonType" : "contains",
+          "locatable" : true,
+          "default" : true
+        }, {
+          "name" : "href",
+          "value" : "/s/profile",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : false
+        }, {
+          "name" : "text",
+          "value" : "Profile",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : true
+        } ],
+        "elements" : [ ]
+      }, {
+        "componentId" : "714f1bd0-eb35-4d7c-a45d-2ba30667b762",
+        "type" : "component::a4b4a253-2c0c-4ca8-be55-204f1f9f2d53",
+        "label" : "FooterHome",
+        "parameters" : [ {
+          "index" : 1,
+          "locatable" : true,
+          "default" : true
+        }, {
+          "name" : "class",
+          "value" : "footer-link",
+          "comparisonType" : "contains",
+          "locatable" : true,
+          "default" : true
+        }, {
+          "name" : "href",
+          "value" : "../s/",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : false
+        }, {
+          "name" : "text",
+          "value" : "Home",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : false
+        } ],
+        "elements" : [ ]
+      }, {
+        "componentId" : "811820ca-3f3f-4115-8a53-b968e2b9e1e1",
+        "type" : "component::a4b4a253-2c0c-4ca8-be55-204f1f9f2d53",
+        "label" : "FooterViewClaims",
+        "parameters" : [ {
+          "index" : 2,
+          "locatable" : true,
+          "default" : true
+        }, {
+          "name" : "class",
+          "value" : "footer-link",
+          "comparisonType" : "contains",
+          "locatable" : true,
+          "default" : true
+        }, {
+          "name" : "href",
+          "value" : "../s/claims",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : false
+        }, {
+          "name" : "text",
+          "value" : "View Claims",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : false
+        } ],
+        "elements" : [ ]
+      }, {
+        "componentId" : "dca101eb-dad2-49c1-8bd9-57d0b9c41231",
+        "type" : "component::a4b4a253-2c0c-4ca8-be55-204f1f9f2d53",
+        "label" : "FooterProfile",
+        "parameters" : [ {
+          "name" : "class",
+          "value" : "footer-link",
+          "comparisonType" : "contains",
+          "locatable" : true,
+          "default" : false
+        }, {
+          "name" : "href",
+          "value" : "../s/profile",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : false
+        }, {
+          "name" : "text",
+          "value" : "Profile",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : true
+        } ],
+        "elements" : [ ]
+      } ]
+    } ]
+  } ]
+}

@@ -1,0 +1,957 @@
+{
+  "componentId" : "1f77194c-2cf7-46d6-9461-17ee0417e0a2",
+  "name" : "/com/site/my/awcomputing-37a/ExperienceSiteCreateClaim",
+  "tagName" : "flowruntime-flow",
+  "parameters" : [ {
+    "name" : "devName",
+    "value" : "ExperienceSiteCreateClaim",
+    "comparisonType" : "equals",
+    "default" : true
+  } ],
+  "type" : "Page",
+  "pageStructureElement" : true,
+  "fieldDetailsElement" : false,
+  "elements" : [ {
+    "componentId" : "80870f5d-682e-4476-bd82-0466c572baef",
+    "type" : "component::63f2b168-cabb-426f-9ffb-5397697e02f6",
+    "label" : "FlowruntimeLwcBody",
+    "parameters" : [ {
+      "name" : "flowLabel",
+      "value" : "Experience Site Create Claim",
+      "comparisonType" : "equals",
+      "default" : true
+    } ],
+    "elements" : [ {
+      "type" : "content",
+      "elements" : [ {
+        "componentId" : "846dc957-6f1a-4d1f-8f42-2689ba63dd96",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Service_Connected_Injury_or_Illness Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Service_Connected_Injury_or_Illness",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "3029f810-177e-4b00-9659-d87d82e6160b",
+            "type" : "component::0a93b2ce-6171-4f37-8fa9-3ba6e19309c0",
+            "label" : "Service Connected Injury or Illness",
+            "parameters" : [ {
+              "name" : "fieldType",
+              "value" : "LARGE_TEXT_INPUT",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Service Connected Injury or Illness",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Service_Connected_Injury_or_Illness",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "d1b272e3-40cb-4fdf-aa4a-926652d5af2e",
+                "type" : "component::e82a0897-22e1-4756-8889-b3a38a37f084",
+                "label" : "ServiceConnectedInjuryOrIllness",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "ff48b1a1-a32a-41b0-ba37-a81ce01f5340",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Date_of_Disability_Onset Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Date_of_Disability_Onset",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "f20e2339-40bc-432b-a154-2f381f626913",
+            "type" : "component::59191a34-607d-416d-88f9-97b47c6bc59d",
+            "label" : "Date of Disability Onset",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "DATEONLY",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Date of Disability Onset",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Date_of_Disability_Onset",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "09777218-883c-439a-94d9-d91e79b0cc78",
+                "type" : "component::4071451a-bead-4fdb-84bd-30359e065f25",
+                "label" : "DateOfDisabilityOnset",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Date_of_Disability_Onset",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "date",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "1d53ab32-e0ec-4b23-af92-f1f91cf767c6",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Date_of_Injury_or_Illness Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Date_of_Injury_or_Illness",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "3465ba22-01f2-4deb-a336-c6c3c8c847e9",
+            "type" : "component::59191a34-607d-416d-88f9-97b47c6bc59d",
+            "label" : "Date of Injury or Illness",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "DATEONLY",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Date of Injury or Illness",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Date_of_Injury_or_Illness",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "75a6304e-0aac-4afc-ac04-65c69061b505",
+                "type" : "component::4071451a-bead-4fdb-84bd-30359e065f25",
+                "label" : "DateofInjuryOrIllness",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Date_of_Injury_or_Illness",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "date",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "d70bf87b-7f54-447f-968f-d13f5ea6a256",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Permanent_Disability Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Permanent_Disability",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "9a3c4624-4c3d-4b69-ad93-fff7a2f40c18",
+            "type" : "component::3f9db152-5134-4601-af07-15040751d874",
+            "label" : "Permanent Disability",
+            "parameters" : [ {
+              "name" : "dataType",
+              "value" : "BOOLEAN",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Permanent Disability",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Permanent_Disability",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "683ce8f9-44ad-4fd9-b1a7-8dfe4ec5c600",
+                "type" : "component::38f5a65b-0065-4df9-8e6c-8dd9a0f8111d",
+                "label" : "PermanentDisabilityCheckbox",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "flowruntime-inline slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Permanent_Disability",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "checkbox",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "a9df9672-1eaa-4551-85a8-f250a582123d",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Pension_Income Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Pension_Income",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "9830c3d0-12f3-48bc-83ce-214393903041",
+            "type" : "component::3892be5c-da69-4ea0-9176-480da719087c",
+            "label" : "Annual Income",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "CURRENCY",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Annual Income",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Pension_Income",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "456c5e08-636e-4cdd-aac8-eb3375efa9c1",
+                "type" : "component::6106cfd4-3b5c-490e-a7ba-769346ea7053",
+                "label" : "AnnualIncome",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Pension_Income",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "number",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "0b809b4e-4860-4419-96fb-339a968aae0b",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Current_Health_Status Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Current_Health_Status",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "7babeba4-0d8a-4031-9b75-817a628b8636",
+            "type" : "component::0a93b2ce-6171-4f37-8fa9-3ba6e19309c0",
+            "label" : "Current Health Status",
+            "parameters" : [ {
+              "name" : "fieldType",
+              "value" : "LARGE_TEXT_INPUT",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Current Health Status",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Current_Health_Status",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "6f8beb7f-f12c-4c39-965e-114a24bc15d5",
+                "type" : "component::e82a0897-22e1-4756-8889-b3a38a37f084",
+                "label" : "CurrentHealthStatus",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "94996ed5-fea3-46b4-a09d-85a57df7ef08",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Health_Insurance_Status Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Health_Insurance_Status",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "6fb9b603-57bd-4041-99a5-413e204b7ddf",
+            "type" : "component::0898d176-5f2f-4b5d-8dd4-addc06ba6fc5",
+            "label" : "Health Insurance Status",
+            "parameters" : [ {
+              "name" : "label",
+              "value" : "Health Insurance Status",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Health_Insurance_Status",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : true
+            } ],
+            "elements" : [ ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "5424c9ac-4f2c-41dd-b2cf-73ff5ee06e62",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Disability_Status Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Disability_Status",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "15a04d20-8199-4454-a6a2-8feb3b7e8681",
+            "type" : "component::0898d176-5f2f-4b5d-8dd4-addc06ba6fc5",
+            "label" : "Disability Status",
+            "parameters" : [ {
+              "name" : "label",
+              "value" : "Disability Status",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Disability_Status",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : true
+            } ],
+            "elements" : [ ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "082f76f7-3955-4002-afda-a34f6420a20d",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Healthcare_Income Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Healthcare_Income",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "083cc9fb-cd98-41d9-abb9-3c6d68fbe457",
+            "type" : "component::3892be5c-da69-4ea0-9176-480da719087c",
+            "label" : "Annual Income",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "CURRENCY",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Annual Income",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Healthcare_Income",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "060d0e6c-3fba-4e54-aa7f-4807cb3bd4e9",
+                "type" : "component::6106cfd4-3b5c-490e-a7ba-769346ea7053",
+                "label" : "AnnualIncome",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Healthcare_Income",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "number",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "d24714dc-1f43-41e7-9f67-59453a236d87",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Type_of_Education_or_Training Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Type_of_Education_or_Training",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "9f181aa9-29c0-4831-b175-d034c17bddee",
+            "type" : "component::0898d176-5f2f-4b5d-8dd4-addc06ba6fc5",
+            "label" : "Type of Education or Training",
+            "parameters" : [ {
+              "name" : "label",
+              "value" : "Type of Education or Training",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Type_of_Education_or_Training",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : true
+            } ],
+            "elements" : [ ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "e4e4757e-46a9-4b9c-b832-8c2e228a1494",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Institution_for_Education_or_Training Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Institution_for_Education_or_Training",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "95d09ca2-1df6-4008-a230-209f34d0f824",
+            "type" : "component::27e2a2bd-5b1b-4a24-95c7-a251f75df8a3",
+            "label" : "Institution for Education or Training",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "STRING",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Institution for Education or Training",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Institution_for_Education_or_Training",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "95364087-b368-4268-b22f-bedf10c95a02",
+                "type" : "component::5cd71547-c934-470c-9115-a10fe7f0307f",
+                "label" : "InstitutionForEducationOrTraining",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Institution_for_Education_or_Training",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                }, {
+                  "name" : "type",
+                  "value" : "text",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "4a91954a-52b1-4b34-87a6-01d1ba074a86",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Program_Start_Date Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Program_Start_Date",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "f7981ab1-2568-48e3-a3ac-c7e530289baf",
+            "type" : "component::59191a34-607d-416d-88f9-97b47c6bc59d",
+            "label" : "Program Start Date",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "DATEONLY",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Program Start Date",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Program_Start_Date",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "f4a682c7-7e9d-4835-af0a-9dbb5a110273",
+                "type" : "component::4071451a-bead-4fdb-84bd-30359e065f25",
+                "label" : "ProgramStartDate",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Program_Start_Date",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "date",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "6978fa85-75c8-4c41-ba79-50aa76167067",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Program_End_Date Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Program_End_Date",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "83d27634-be9c-4a2a-9d7e-ee6983571892",
+            "type" : "component::59191a34-607d-416d-88f9-97b47c6bc59d",
+            "label" : "Program End Date",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "DATEONLY",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Program End Date",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Program_End_Date",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "5764830d-655e-445f-a968-f10a6a0af392",
+                "type" : "component::4071451a-bead-4fdb-84bd-30359e065f25",
+                "label" : "ProgramEndDate",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Program_End_Date",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "date",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "6b50f9c3-07a8-4dfe-a57f-14755a4843d6",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Current_Housing_Status Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Current_Housing_Status",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "99398b63-dbbc-4e11-bf51-5fee806bf675",
+            "type" : "component::0898d176-5f2f-4b5d-8dd4-addc06ba6fc5",
+            "label" : "Current Housing Status",
+            "parameters" : [ {
+              "name" : "label",
+              "value" : "Current Housing Status",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Current_Housing_Status",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : true
+            } ],
+            "elements" : [ ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "83bd5362-6e92-4d4d-b497-d828d20edcde",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Disability_Status_Housing Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Disability_Status_Housing",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "21ff7aa0-03f1-4791-b0ad-f55f92f8533b",
+            "type" : "component::0898d176-5f2f-4b5d-8dd4-addc06ba6fc5",
+            "label" : "Disability Status",
+            "parameters" : [ {
+              "name" : "label",
+              "value" : "Disability Status",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Disability_Status_Housing",
+              "comparisonType" : "equals",
+              "locatable" : true,
+              "default" : true
+            } ],
+            "elements" : [ ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "098862eb-3b7b-4087-8f82-b10ef9b8ffae",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Credit_Score Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Credit_Score",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "1903034e-3013-45fe-9ea0-50c5abf521bf",
+            "type" : "component::4bf24c6d-3f90-4334-bea9-75091b98a6d9",
+            "label" : "Credit Score",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "NUMBER",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Credit Score",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Credit_Score",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "f171b5e7-18ca-4a9b-a13b-e590da2534ec",
+                "type" : "component::6106cfd4-3b5c-490e-a7ba-769346ea7053",
+                "label" : "CreditScore",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Credit_Score",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "number",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "componentId" : "6f975791-107d-4744-adb5-1182f160bf4b",
+        "type" : "component::86ca2dad-bb06-4eb8-af44-e590c289cea3",
+        "label" : "Housing_Income Screen Field",
+        "parameters" : [ {
+          "name" : "field.name",
+          "value" : "Housing_Income",
+          "comparisonType" : "equals",
+          "default" : true
+        } ],
+        "elements" : [ {
+          "type" : "content",
+          "elements" : [ {
+            "componentId" : "feb4e2b7-4479-4fdc-8afe-d8aa88c25f91",
+            "type" : "component::3892be5c-da69-4ea0-9176-480da719087c",
+            "label" : "Annual Income",
+            "parameters" : [ {
+              "name" : "fieldDataType",
+              "value" : "CURRENCY",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "label",
+              "value" : "Annual Income",
+              "comparisonType" : "equals",
+              "default" : false
+            }, {
+              "name" : "name",
+              "value" : "Housing_Income",
+              "comparisonType" : "equals",
+              "default" : true
+            } ],
+            "elements" : [ {
+              "type" : "content",
+              "elements" : [ {
+                "componentId" : "b72a7aea-f512-453b-845b-cca7e0375a95",
+                "type" : "component::6106cfd4-3b5c-490e-a7ba-769346ea7053",
+                "label" : "AnnualIncome",
+                "parameters" : [ {
+                  "name" : "class",
+                  "value" : "slds-form-element",
+                  "comparisonType" : "contains",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "name",
+                  "value" : "Housing_Income",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : false
+                }, {
+                  "name" : "type",
+                  "value" : "number",
+                  "comparisonType" : "equals",
+                  "locatable" : true,
+                  "default" : true
+                } ],
+                "elements" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "componentId" : "9c29dab6-5469-4b4b-bf2b-202ae27c4dad",
+    "type" : "component::1b4c15a5-dc39-4f5b-8b29-472a83409c7c",
+    "label" : "FlowruntimeNavigationBar",
+    "parameters" : [ ],
+    "selectors" : [ {
+      "xpath" : ".//flowruntime-navigation-bar"
+    } ],
+    "elements" : [ {
+      "type" : "content",
+      "elements" : [ {
+        "componentId" : "0014f6d9-8841-4dbd-945f-5dc8d56a9536",
+        "type" : "component::5c6b2d69-4033-48fd-9f45-8a0f567a8251",
+        "label" : "Next button",
+        "parameters" : [ {
+          "name" : "class",
+          "value" : "slds-button flow-button__NEXT",
+          "comparisonType" : "contains",
+          "locatable" : true,
+          "default" : false
+        }, {
+          "name" : "label",
+          "value" : "Next",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : true
+        } ],
+        "elements" : [ ]
+      }, {
+        "componentId" : "f83373e0-7485-406c-9329-1dbde34dd8f5",
+        "type" : "component::5c6b2d69-4033-48fd-9f45-8a0f567a8251",
+        "label" : "Finish button",
+        "parameters" : [ {
+          "name" : "class",
+          "value" : "slds-button flow-button__FINISH",
+          "comparisonType" : "contains",
+          "locatable" : true,
+          "default" : false
+        }, {
+          "name" : "label",
+          "value" : "Finish",
+          "comparisonType" : "equals",
+          "locatable" : true,
+          "default" : true
+        } ],
+        "elements" : [ ]
+      } ]
+    } ]
+  } ]
+}

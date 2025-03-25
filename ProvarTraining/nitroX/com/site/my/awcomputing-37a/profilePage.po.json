@@ -1,0 +1,19 @@
+{
+  "componentId" : "b8ec7c8e-ebac-4a39-a7db-ba7ab2e1807d",
+  "name" : "/com/site/my/awcomputing-37a/profilePage",
+  "tagName" : "c-profile-page",
+  "parameters" : [ ],
+  "type" : "Page",
+  "pageStructureElement" : true,
+  "fieldDetailsElement" : false,
+  "elements" : [ {
+    "componentId" : "e862158f-8cd3-4893-8e42-3875d23d234c",
+    "type" : "component::6171f92c-aabe-47ae-9e46-849ec30aa6a3",
+    "label" : "EDIT PROFILE button",
+    "parameters" : [ ],
+    "selectors" : [ {
+      "xpath" : ".//div[contains(@class,'button-container')]/button"
+    } ],
+    "elements" : [ ]
+  } ]
+}

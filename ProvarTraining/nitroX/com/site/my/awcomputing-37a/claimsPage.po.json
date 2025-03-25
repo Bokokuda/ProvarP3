@@ -1,0 +1,32 @@
+{
+  "componentId" : "584fc731-8f47-417b-b5c5-81af19bbc001",
+  "name" : "/com/site/my/awcomputing-37a/claimsPage",
+  "tagName" : "c-claims-page",
+  "parameters" : [ ],
+  "type" : "Page",
+  "pageStructureElement" : true,
+  "fieldDetailsElement" : false,
+  "elements" : [ {
+    "componentId" : "c4d11559-5bee-4e4e-baa7-b2172da7c224",
+    "type" : "component::e3a0a2dc-3262-4ef0-9d6e-26ddc498c8c8",
+    "label" : "CClaimCard",
+    "parameters" : [ {
+      "name" : "recordType.label",
+      "value" : "Disability Compensation",
+      "comparisonType" : "equals",
+      "default" : true
+    } ],
+    "elements" : [ ]
+  }, {
+    "componentId" : "cd847a83-38db-4e0b-bd04-66afadd23f7f",
+    "type" : "component::4d94de66-5ed7-41b8-9f5c-1ba5482305b7",
+    "label" : "CClaimCard",
+    "parameters" : [ {
+      "name" : "recordType.label",
+      "value" : "Healthcare Benefits",
+      "comparisonType" : "equals",
+      "default" : true
+    } ],
+    "elements" : [ ]
+  } ]
+}

@@ -1,0 +1,28 @@
+{
+  "componentId" : "73c7e9aa-e12b-46bd-8b27-0e8dbd63863b",
+  "name" : "/com/site/my/awcomputing-37a/medicalHistory",
+  "tagName" : "c-medical-history",
+  "parameters" : [ ],
+  "type" : "Page",
+  "pageStructureElement" : true,
+  "fieldDetailsElement" : false,
+  "elements" : [ {
+    "componentId" : "fafdd58e-f281-4536-8215-acedb8f80651",
+    "type" : "component::a935ef86-3a1d-4150-9db4-70ec711e2c43",
+    "label" : "Upload Medical History",
+    "parameters" : [ {
+      "name" : "label",
+      "value" : "Upload Medical History",
+      "comparisonType" : "equals",
+      "locatable" : true,
+      "default" : false
+    }, {
+      "name" : "name",
+      "value" : "medicalHistoryUploader",
+      "comparisonType" : "equals",
+      "locatable" : true,
+      "default" : true
+    } ],
+    "elements" : [ ]
+  } ]
+}
