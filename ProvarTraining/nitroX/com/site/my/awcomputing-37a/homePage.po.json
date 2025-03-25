@@ -1,0 +1,28 @@
+{
+  "componentId" : "4f7a49b0-789a-4ca4-a8bb-45862ad77cee",
+  "name" : "/com/site/my/awcomputing-37a/homePage",
+  "tagName" : "c-home-page",
+  "parameters" : [ ],
+  "type" : "Page",
+  "pageStructureElement" : true,
+  "fieldDetailsElement" : false,
+  "elements" : [ {
+    "componentId" : "f3e2d33d-5c06-4bc6-a14f-96a73720f4fd",
+    "type" : "component::6171f92c-aabe-47ae-9e46-849ec30aa6a3",
+    "label" : "Start a New Claim button",
+    "parameters" : [ {
+      "name" : "innerText",
+      "value" : "Start a New Claim",
+      "comparisonType" : "contains",
+      "locatable" : true,
+      "default" : true
+    }, {
+      "name" : "type",
+      "value" : "submit",
+      "comparisonType" : "equals",
+      "locatable" : true,
+      "default" : true
+    } ],
+    "elements" : [ ]
+  } ]
+}

@@ -1,0 +1,22 @@
+{
+  "componentId" : "9c758d63-e09c-43bb-8ffb-5fefee5d458b",
+  "name" : "/com/site/my/awcomputing-37a/profileHeader",
+  "tagName" : "c-profile-header",
+  "parameters" : [ ],
+  "type" : "Page",
+  "pageStructureElement" : true,
+  "fieldDetailsElement" : false,
+  "elements" : [ {
+    "componentId" : "bc2f855e-79b5-42b2-a93a-7e44be91ed94",
+    "type" : "component::6b762b6b-1c07-4539-89a6-f77fecfaf162",
+    "label" : "ProfileHeaderCard",
+    "parameters" : [ {
+      "name" : "class",
+      "value" : "profile-card header-card",
+      "comparisonType" : "contains",
+      "locatable" : true,
+      "default" : true
+    } ],
+    "elements" : [ ]
+  } ]
+}
