@@ -1,9 +1,3 @@
-2025/03/19-16:54:13.071 10c8 Creating DB C:\Users\Nickolas\Provar\WorkspaceP3\ProvarP3\.chromeProfiles\profile0\Default\IndexedDB\https_awcomputing-37a--testerbox.sandbox.lightning.force.com_0.indexeddb.leveldb since it was missing.
-2025/03/19-16:54:13.091 10c8 Reusing MANIFEST C:\Users\Nickolas\Provar\WorkspaceP3\ProvarP3\.chromeProfiles\profile0\Default\IndexedDB\https_awcomputing-37a--testerbox.sandbox.lightning.force.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/03/19-16:54:14.749 4988 Level-0 table #5: started
-2025/03/19-16:54:14.766 4988 Level-0 table #5: 98676 bytes OK
-2025/03/19-16:54:14.775 4988 Delete type=0 #3
-2025/03/19-16:54:14.776 53f4 Manual compaction at level-0 from '\x00\x0a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/03/19-16:54:52.416 4988 Level-0 table #7: started
-2025/03/19-16:54:52.448 4988 Level-0 table #7: 1855805 bytes OK
-2025/03/19-16:54:52.456 4988 Delete type=0 #4
+2025/03/24-16:26:42.532 4814 Reusing MANIFEST C:\Users\Nickolas\Provar\WorkspaceP3\ProvarP3\.chromeProfiles\profile0\Default\IndexedDB\https_awcomputing-37a--testerbox.sandbox.lightning.force.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/03/24-16:26:42.533 4814 Recovering log #6
+2025/03/24-16:26:42.539 4814 Reusing old log C:\Users\Nickolas\Provar\WorkspaceP3\ProvarP3\.chromeProfiles\profile0\Default\IndexedDB\https_awcomputing-37a--testerbox.sandbox.lightning.force.com_0.indexeddb.leveldb/000006.log 
