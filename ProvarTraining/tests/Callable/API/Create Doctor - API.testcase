@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="8306924f-58a2-4f64-a589-73c196bfd84e" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="566f587c-ea08-4d1e-bbfc-e4331f582741" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">8ed1ef49-514a-49c5-b92f-a3bdb1cc532e</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Veteran_Management</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument argId="6f6affe1-dae7-48bf-8fa8-17f3f22d9f78" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="e6216e40-4ef0-49fe-b6ca-1ae01f90dd2b" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="2" title="Create Object: Doctor__c=&gt;DoctorId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Doctor__c</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">DoctorId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="ea65555f-5875-487b-8a64-77b248e321ea" id="Office_Name__c">
+          <value class="variable">
+            <path element="Office_Name__c"/>
+          </value>
+        </argument>
+        <argument argId="0540994a-aa72-48b9-a9c2-f605716c1f3c" id="Name">
+          <value class="variable">
+            <path element="Name"/>
+          </value>
+        </argument>
+        <argument argId="e225daeb-6b87-4f5e-bf88-33f3e549454d" id="Location__Latitude__s">
+          <value class="variable">
+            <path element="Location__Latitude__s"/>
+          </value>
+        </argument>
+        <argument argId="d3f43ca7-f218-4ec1-8c86-868beac9f61c" id="Location__Longitude__s">
+          <value class="variable">
+            <path element="Location__Longitude__s"/>
+          </value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Doctor__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Office_Name__c" name="Office_Name__c" title="Office_Name__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Name" name="Name" title="Name"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Location__Latitude__s" name="Location__Latitude__s" title="Location__Latitude__s"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Location__Longitude__s" name="Location__Longitude__s" title="Location__Longitude__s"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:ea65555f-5875-487b-8a64-77b248e321ea" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Office_Name__c" name="Office_Name__c" passwordVariableAllowed="true" title="Office_Name__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:0540994a-aa72-48b9-a9c2-f605716c1f3c" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Name" name="Name" passwordVariableAllowed="true" title="Name">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:e225daeb-6b87-4f5e-bf88-33f3e549454d" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Location__Latitude__s" name="Location__Latitude__s" passwordVariableAllowed="true" title="Location__Latitude__s">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:d3f43ca7-f218-4ec1-8c86-868beac9f61c" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Location__Longitude__s" name="Location__Longitude__s" passwordVariableAllowed="true" title="Location__Longitude__s">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:6f6affe1-dae7-48bf-8fa8-17f3f22d9f78" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+  </params>
+  <args>
+    <argument id="Office_Name__c">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Name">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Location__Latitude__s"/>
+    <argument id="Location__Longitude__s"/>
+    <argument id="reuseConnectionName">
+      <value class="value" valueClass="string">Admin</value>
+    </argument>
+  </args>
+</testCase>

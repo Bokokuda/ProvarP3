@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="8acbe409-416f-4a3e-8ae9-4d10f213c294" id="31" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="78c19627-2db8-48a2-81c2-d6457a4001c7" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">8ed1ef49-514a-49c5-b92f-a3bdb1cc532e</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Veteran_Management</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument argId="e3339a49-ee57-43e3-b7dd-80678cbdb265" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="0a3cacea-0066-4f39-83c0-3efa3452d0e7" name="ApexSoqlQuery" testItemId="5" title="SOQL Query: select Id from Medical_History_Document__c where Name = '{StringNormalize(Medical_History_Document__c)}' limit 1=&gt;Medical_History_DocumentRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Id from Medical_History_Document__c where Name = '</value>
+              <funcCall id="StringNormalize">
+                <argument id="sourceString">
+                  <value class="variable">
+                    <path element="Medical_History_Document__c"/>
+                  </value>
+                </argument>
+              </funcCall>
+              <value valueClass="string">' limit 1</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">Medical_History_DocumentRows</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="cfb3732d-74e0-4ace-8eb5-7115224a0267" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="4" title="Create Object: Approved_Medical_Document__c=&gt;ApprovedMedicalDocumentId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Approved_Medical_Document__c</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">ApprovedMedicalDocumentId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="236befa9-b22d-4ec0-b864-d1854257fc19" id="Medical_History_Document__c">
+          <value class="variable">
+            <path element="Medical_History_DocumentRows"/>
+            <path element="Id"/>
+          </value>
+        </argument>
+        <argument argId="7d71cf89-6420-4e9e-958d-f2267fe81ae4" id="Approved_Date__c">
+          <value class="variable">
+            <path element="Approved_Date__c"/>
+          </value>
+        </argument>
+        <argument argId="9663e49f-9b60-490a-a8e8-0f4103e48311" id="Approval_Notes__c">
+          <value class="variable">
+            <path element="Approval_Notes__c"/>
+          </value>
+        </argument>
+        <argument argId="aa013fc1-812a-4902-b75c-baa2c3a03f5d" id="Approving_Authority__c">
+          <value class="variable">
+            <path element="Approving_Authority__c"/>
+          </value>
+        </argument>
+        <argument id="Name">
+          <value class="funcCall" id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">10</value>
+            </argument>
+          </value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Approved_Medical_Document__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Approved_Medical_Document__c&amp;field=Medical_History_Document__c" name="Medical_History_Document__c" title="Medical_History_Document__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Approved_Medical_Document__c&amp;field=Approved_Date__c" name="Approved_Date__c" title="Approved_Date__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Approved_Medical_Document__c&amp;field=Approval_Notes__c" name="Approval_Notes__c" title="Approval_Notes__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Approved_Medical_Document__c&amp;field=Approving_Authority__c" name="Approving_Authority__c" title="Approving_Authority__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Approved_Medical_Document__c&amp;field=Name" name="Name" title="Name"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:e3339a49-ee57-43e3-b7dd-80678cbdb265" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:236befa9-b22d-4ec0-b864-d1854257fc19" modelBinding="sf:ui:binding:object?object=Approved_Medical_Document__c&amp;field=Medical_History_Document__c" name="Medical_History_Document__c" passwordVariableAllowed="true" title="Medical_History_Document__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:7d71cf89-6420-4e9e-958d-f2267fe81ae4" modelBinding="sf:ui:binding:object?object=Approved_Medical_Document__c&amp;field=Approved_Date__c" name="Approved_Date__c" passwordVariableAllowed="true" title="Approved_Date__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:9663e49f-9b60-490a-a8e8-0f4103e48311" modelBinding="sf:ui:binding:object?object=Approved_Medical_Document__c&amp;field=Approval_Notes__c" name="Approval_Notes__c" passwordVariableAllowed="true" title="Approval_Notes__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:aa013fc1-812a-4902-b75c-baa2c3a03f5d" modelBinding="sf:ui:binding:object?object=Approved_Medical_Document__c&amp;field=Approving_Authority__c" name="Approving_Authority__c" passwordVariableAllowed="true" title="Approving_Authority__c">
+      <summary/>
+    </param>
+  </params>
+  <args>
+    <argument id="reuseConnectionName">
+      <value class="value" valueClass="string">Admin</value>
+    </argument>
+    <argument id="Medical_History_Document__c">
+      <value class="value" valueClass="string">Willy Billy\\'s Medical History Documents</value>
+    </argument>
+    <argument id="Approved_Date__c">
+      <value class="funcCall" id="DateAdd">
+        <argument id="date">
+          <value class="variable">
+            <path element="TODAY"/>
+          </value>
+        </argument>
+        <argument id="amount">
+          <value class="value" valueClass="decimal">0</value>
+        </argument>
+        <argument id="unit">
+          <value class="variable">
+            <path element="DAYS"/>
+          </value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Approval_Notes__c">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Approving_Authority__c"/>
+  </args>
+</testCase>

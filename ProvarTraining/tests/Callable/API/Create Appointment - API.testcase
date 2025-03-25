@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="2fbab4c7-33d7-4bb4-85a4-23d1516eaf9a" id="20" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="208c09a5-69f0-4595-a948-37ce213108ef" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">8ed1ef49-514a-49c5-b92f-a3bdb1cc532e</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Veteran_Management</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument argId="0800128b-e7f8-4e67-9afd-4ac801dde266" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="1003a65b-c942-4f7d-9e80-f1299bd88ae8" name="ApexSoqlQuery" testItemId="3" title="SOQL Query: select Id from Veteran__c where Name = '{StringNormalize(Veteran__c)}' limit 1=&gt;VeteranRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Id from Veteran__c where Name = '</value>
+              <funcCall id="StringNormalize">
+                <argument id="sourceString">
+                  <value class="variable">
+                    <path element="Veteran__c"/>
+                  </value>
+                </argument>
+              </funcCall>
+              <value valueClass="string">' limit 1</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">VeteranRows</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="d85aa573-059e-428b-9958-cd8d40813d56" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="2" title="Create Object: Appointment__c=&gt;AppointmentId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Appointment__c</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">AppointmentId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="fa9d18b1-37ad-4b46-9e70-a32f694f8d77" id="Veteran__c">
+          <value class="variable">
+            <path element="VeteranRows"/>
+            <path element="Id"/>
+          </value>
+        </argument>
+        <argument argId="387b1946-a341-4c38-baca-2bd28d7a715b" id="Service_Type__c">
+          <value class="variable">
+            <path element="Service_Type__c"/>
+          </value>
+        </argument>
+        <argument argId="0694bbbd-4c88-4ae2-adf7-c8cf053027ad" id="Appointment_Date__c">
+          <value class="variable">
+            <path element="Appointment_Date__c"/>
+          </value>
+        </argument>
+        <argument argId="a0debd71-9ac3-48f1-8bdc-091dee6b4b9f" id="Status__c">
+          <value class="variable">
+            <path element="Status__c"/>
+          </value>
+        </argument>
+        <argument argId="ea627f4f-49fa-4795-b1f0-f81c8f877f5d" id="Assigned_Staff__c">
+          <value class="variable">
+            <path element="Assigned_Staff__c"/>
+          </value>
+        </argument>
+        <argument argId="cadc78ac-ba5f-4078-b6ab-fe8c10483890" id="Related_Appeal__c">
+          <value class="variable">
+            <path element="Related_Appeal__c"/>
+          </value>
+        </argument>
+        <argument argId="03b64748-ea00-4771-ba30-0b35612b5568" id="Related_Claim__c">
+          <value class="variable">
+            <path element="Related_Claim__c"/>
+          </value>
+        </argument>
+        <argument argId="865505cc-f5da-4ad6-9fd1-d96b0d3c36d4" id="Notes__c">
+          <value class="variable">
+            <path element="Notes__c"/>
+          </value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Appointment__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Veteran__c" name="Veteran__c" title="Veteran__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Service_Type__c" name="Service_Type__c" title="Service_Type__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Appointment_Date__c" name="Appointment_Date__c" title="Appointment_Date__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Status__c" name="Status__c" title="Status__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Assigned_Staff__c" name="Assigned_Staff__c" title="Assigned_Staff__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Related_Appeal__c" name="Related_Appeal__c" title="Related_Appeal__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Related_Claim__c" name="Related_Claim__c" title="Related_Claim__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Notes__c" name="Notes__c" title="Notes__c"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:0800128b-e7f8-4e67-9afd-4ac801dde266" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:fa9d18b1-37ad-4b46-9e70-a32f694f8d77" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Veteran__c" name="Veteran__c" passwordVariableAllowed="true" title="Veteran__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:387b1946-a341-4c38-baca-2bd28d7a715b" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Service_Type__c" name="Service_Type__c" passwordVariableAllowed="true" title="Service_Type__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:a0debd71-9ac3-48f1-8bdc-091dee6b4b9f" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Status__c" name="Status__c" passwordVariableAllowed="true" title="Status__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:ea627f4f-49fa-4795-b1f0-f81c8f877f5d" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Assigned_Staff__c" name="Assigned_Staff__c" passwordVariableAllowed="true" title="Assigned_Staff__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:cadc78ac-ba5f-4078-b6ab-fe8c10483890" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Related_Appeal__c" name="Related_Appeal__c" passwordVariableAllowed="true" title="Related_Appeal__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:03b64748-ea00-4771-ba30-0b35612b5568" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Related_Claim__c" name="Related_Claim__c" passwordVariableAllowed="true" title="Related_Claim__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:865505cc-f5da-4ad6-9fd1-d96b0d3c36d4" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Notes__c" name="Notes__c" passwordVariableAllowed="true" title="Notes__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:0694bbbd-4c88-4ae2-adf7-c8cf053027ad" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Appointment_Date__c" name="Appointment_Date__c" passwordVariableAllowed="true" title="Appointment_Date__c">
+      <summary/>
+    </param>
+  </params>
+  <args>
+    <argument id="reuseConnectionName">
+      <value class="value" valueClass="string">Admin</value>
+    </argument>
+    <argument id="Veteran__c"/>
+    <argument id="Service_Type__c"/>
+    <argument id="Status__c"/>
+    <argument id="Assigned_Staff__c"/>
+    <argument id="Related_Appeal__c"/>
+    <argument id="Related_Claim__c"/>
+    <argument id="Notes__c"/>
+    <argument id="Appointment_Date__c">
+      <value class="variable">
+        <path element="NOW"/>
+      </value>
+    </argument>
+  </args>
+</testCase>

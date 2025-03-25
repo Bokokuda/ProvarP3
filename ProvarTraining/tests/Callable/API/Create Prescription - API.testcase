@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="eb4b65a5-eefb-48c7-bc28-911a46c7cfa2" id="40" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="dc1ca2c4-bedd-4954-86d5-24321184cdf4" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">8ed1ef49-514a-49c5-b92f-a3bdb1cc532e</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Veteran_Management</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument argId="32482751-cdd7-45c3-815f-53ab461ceea2" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="ee28b362-2bb6-4cf0-8b75-593a87ee7ade" name="ApexSoqlQuery" testItemId="5" title="SOQL Query: select Id from Veteran__c where Name = '{StringNormalize(Veteran__c)}' limit 1=&gt;VeteranRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Id from Veteran__c where Name = '</value>
+              <funcCall id="StringNormalize">
+                <argument id="sourceString">
+                  <value class="variable">
+                    <path element="Veteran__c"/>
+                  </value>
+                </argument>
+              </funcCall>
+              <value valueClass="string">' limit 1</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">VeteranRows</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="97b9fdf0-4005-4a4b-a0d0-c6a57639b0bd" name="ApexSoqlQuery" testItemId="7" title="SOQL Query: select Id from Doctor__c where Name = '{StringNormalize(Doctor__c)}' limit 1=&gt;DoctorRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Id from Doctor__c where Name = '</value>
+              <funcCall id="StringNormalize">
+                <argument id="sourceString">
+                  <value class="variable">
+                    <path element="Doctor__c"/>
+                  </value>
+                </argument>
+              </funcCall>
+              <value valueClass="string">' limit 1</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">DoctorRows</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="f4cf5021-c578-481c-ad8d-86cfa4f30ddc" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="3" title="Create Object: Prescription__c=&gt;PrescriptionId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Prescription__c</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">PrescriptionId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="284eb504-c41c-40e8-beea-6ae3428015c8" id="Doctor__c">
+          <value class="variable">
+            <path element="DoctorRows"/>
+            <path element="Id"/>
+          </value>
+        </argument>
+        <argument argId="f2b1baba-1ff4-4d59-81f3-eafe6a20eb11" id="Veteran__c">
+          <value class="variable">
+            <path element="VeteranRows"/>
+            <path element="Id"/>
+          </value>
+        </argument>
+        <argument argId="fea467a9-1720-4a2b-8118-97e5366a0aa2" id="Dosage_Unit__c">
+          <value class="variable">
+            <path element="Dosage_Unit__c"/>
+          </value>
+        </argument>
+        <argument argId="573de0e6-317f-4124-8602-027be0f24acb" id="Prescription_Date__c">
+          <value class="variable">
+            <path element="Prescription_Date__c"/>
+          </value>
+        </argument>
+        <argument argId="e250625b-020d-4d2c-ae8b-26033315d82e" id="Instructions__c">
+          <value class="variable">
+            <path element="Instructions__c"/>
+          </value>
+        </argument>
+        <argument argId="0a8e92df-c23a-4aed-8889-172b8e4ff6cd" id="Dispense_Amount__c">
+          <value class="variable">
+            <path element="Dispense_Amount__c"/>
+          </value>
+        </argument>
+        <argument argId="dd4977a7-6aa4-43b9-b553-92e099721ffb" id="Refills__c">
+          <value class="variable">
+            <path element="Refills__c"/>
+          </value>
+        </argument>
+        <argument argId="a911557b-11a2-41bf-8bef-d09ba22a2982" id="Dosage_Amount__c">
+          <value class="variable">
+            <path element="Dosage_Amount__c"/>
+          </value>
+        </argument>
+        <argument argId="9f87935d-85d6-4898-97b7-87f8b2f26531" id="Drug_Name__c">
+          <value class="variable">
+            <path element="Drug_Name__c"/>
+          </value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Prescription__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Doctor__c" name="Doctor__c" title="Doctor__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Veteran__c" name="Veteran__c" title="Veteran__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Dosage_Unit__c" name="Dosage_Unit__c" title="Dosage_Unit__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Prescription_Date__c" name="Prescription_Date__c" title="Prescription_Date__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Instructions__c" name="Instructions__c" title="Instructions__c">
+          <summary>Enter full dosing instructions.  Example: '1 tablet by mouth every morning'</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Dispense_Amount__c" name="Dispense_Amount__c" title="Dispense_Amount__c">
+          <summary>Quantity of medication to be dispensed (e.g. 30, 60).</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Refills__c" name="Refills__c" title="Refills__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Dosage_Amount__c" name="Dosage_Amount__c" title="Dosage_Amount__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Drug_Name__c" name="Drug_Name__c" title="Drug_Name__c"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:fea467a9-1720-4a2b-8118-97e5366a0aa2" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Dosage_Unit__c" name="Dosage_Unit__c" passwordVariableAllowed="true" title="Dosage_Unit__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:dd4977a7-6aa4-43b9-b553-92e099721ffb" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Refills__c" name="Refills__c" passwordVariableAllowed="true" title="Refills__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:9f87935d-85d6-4898-97b7-87f8b2f26531" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Drug_Name__c" name="Drug_Name__c" passwordVariableAllowed="true" title="Drug_Name__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:284eb504-c41c-40e8-beea-6ae3428015c8" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Doctor__c" name="Doctor__c" passwordVariableAllowed="true" title="Doctor__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:f2b1baba-1ff4-4d59-81f3-eafe6a20eb11" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Veteran__c" name="Veteran__c" passwordVariableAllowed="true" title="Veteran__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:573de0e6-317f-4124-8602-027be0f24acb" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Prescription_Date__c" name="Prescription_Date__c" passwordVariableAllowed="true" title="Prescription_Date__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:0a8e92df-c23a-4aed-8889-172b8e4ff6cd" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Dispense_Amount__c" name="Dispense_Amount__c" passwordVariableAllowed="true" title="Dispense_Amount__c">
+      <summary>Quantity of medication to be dispensed (e.g. 30, 60).</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:a911557b-11a2-41bf-8bef-d09ba22a2982" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Dosage_Amount__c" name="Dosage_Amount__c" passwordVariableAllowed="true" title="Dosage_Amount__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:e250625b-020d-4d2c-ae8b-26033315d82e" modelBinding="sf:ui:binding:object?object=Prescription__c&amp;field=Instructions__c" name="Instructions__c" passwordVariableAllowed="true" title="Instructions__c">
+      <summary>Enter full dosing instructions.  Example: '1 tablet by mouth every morning'</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:32482751-cdd7-45c3-815f-53ab461ceea2" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+  </params>
+  <args>
+    <argument id="Dosage_Unit__c">
+      <value class="value" valueClass="string">mL</value>
+    </argument>
+    <argument id="Refills__c">
+      <value class="value" valueClass="string">0</value>
+    </argument>
+    <argument id="Drug_Name__c">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Doctor__c"/>
+    <argument id="Veteran__c"/>
+    <argument id="Prescription_Date__c">
+      <value class="variable">
+        <path element="TODAY"/>
+      </value>
+    </argument>
+    <argument id="Dispense_Amount__c">
+      <value class="value" valueClass="string">30</value>
+    </argument>
+    <argument id="Dosage_Amount__c">
+      <value class="value" valueClass="string">10</value>
+    </argument>
+    <argument id="Instructions__c">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="reuseConnectionName">
+      <value class="value" valueClass="string">Admin</value>
+    </argument>
+  </args>
+</testCase>
