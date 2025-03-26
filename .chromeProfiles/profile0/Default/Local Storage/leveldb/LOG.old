@@ -1,3 +1,6 @@
-2025/03/24-16:26:35.829 266c Reusing MANIFEST C:\Users\Nickolas\Provar\WorkspaceP3\ProvarP3\.chromeProfiles\profile0\Default\Local Storage\leveldb/MANIFEST-000001
-2025/03/24-16:26:35.838 266c Recovering log #3
-2025/03/24-16:26:35.843 266c Reusing old log C:\Users\Nickolas\Provar\WorkspaceP3\ProvarP3\.chromeProfiles\profile0\Default\Local Storage\leveldb/000003.log 
+2025/03/26-12:29:19.209 42e0 Reusing MANIFEST C:\Users\Nickolas\Provar\WorkspaceP3\ProvarP3\.chromeProfiles\profile0\Default\Local Storage\leveldb/MANIFEST-000001
+2025/03/26-12:29:19.217 42e0 Recovering log #4
+2025/03/26-12:29:19.222 42e0 Reusing old log C:\Users\Nickolas\Provar\WorkspaceP3\ProvarP3\.chromeProfiles\profile0\Default\Local Storage\leveldb/000004.log 
+2025/03/26-12:30:25.167 b90 Level-0 table #7: started
+2025/03/26-12:30:25.173 b90 Level-0 table #7: 14475 bytes OK
+2025/03/26-12:30:25.175 b90 Delete type=0 #4
