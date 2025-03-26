@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="f89a7412-146e-4647-bfc6-5181d205ebc4" id="1" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="a9f2cc01-6146-4123-a596-7ddc4b034234" name="ApexConnect" testItemId="4" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">8ed1ef49-514a-49c5-b92f-a3bdb1cc532e</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Veteran_Management</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="5abed631-a870-48e2-9a40-3471fe96d328" name="ApexSoqlQuery" testItemId="8" title="SOQL Query: select Id from Veteran__c limit 1=&gt;VeteranRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="value" valueClass="string">select Id from Veteran__c limit 1</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">VeteranRows</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="3a29b209-985a-4fe6-8fe3-d14261923e76" name="ApexSoqlQuery" testItemId="9" title="SOQL Query: select Id from User where ProfileId = '00eKZ000000giYs' limit 1=&gt;CaseWorkerRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="value" valueClass="string">select Id from User where ProfileId = '00eKZ000000giYs' limit 1</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">CaseWorkerRows</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="163723b6-b0fd-494e-b739-ab79a9421f4c" name="ApexSoqlQuery" testItemId="6" title="SOQL Query: SELECT Id, Name FROM RecordType WHERE SObjectType = 'Claim__c' limit 1=&gt;RecordIdRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="value" valueClass="string">SELECT Id, Name FROM RecordType WHERE SObjectType = 'Claim__c' limit 1</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">RecordIdRows</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="1ae22fa5-eb60-40f6-8352-575e8f7ef742" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="5" title="Create Object: Claim__c=&gt;ClaimId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Claim__c</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">ClaimId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="Current_Status__c">
+          <value class="value" valueClass="string">Received</value>
+        </argument>
+        <argument id="Case_Worker__c">
+          <value class="variable">
+            <path element="CaseWorkerRows"/>
+            <path element="Id"/>
+          </value>
+        </argument>
+        <argument id="Claim_Type__c">
+          <value class="variable">
+            <path element="Claim_Type__c"/>
+          </value>
+        </argument>
+        <argument id="RecordTypeId">
+          <value class="variable">
+            <path element="RecordIdRows"/>
+            <path element="Id"/>
+          </value>
+        </argument>
+        <argument id="Decision_Date__c"/>
+        <argument id="Veteran__c">
+          <value class="variable">
+            <path element="VeteranRows"/>
+            <path element="Id"/>
+          </value>
+        </argument>
+      </arguments>
+      <parameterValueSources/>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Claim__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Current_Status__c" name="Current_Status__c" title="Current_Status__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Case_Worker__c" name="Case_Worker__c" title="Case_Worker__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Claim_Type__c" name="Claim_Type__c" title="Claim_Type__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Decision_Date__c" name="Decision_Date__c" title="Decision_Date__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Veteran__c" name="Veteran__c" title="Veteran__c"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+</testCase>
