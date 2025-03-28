@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase guid="8448743c-b5eb-4894-ba6a-a26c194b2467" id="5" visibility="Internal">
+<testCase guid="f43f45b1-f08b-4ac3-95ef-e9aac8dc9aa5" id="5" visibility="Internal">
   <summary/>
   <steps>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="11eff471-dd28-40a7-9e11-fe2f4f56eb07" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="c9a719cb-c298-4bed-9eb7-2a786db54903" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
       <arguments>
         <argument id="connectionName">
           <value class="value" valueClass="string">Admin</value>
@@ -50,7 +50,7 @@
         <argument id="webBrowser"/>
       </arguments>
     </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="5f557a34-9429-4e30-8e1a-a7aa2bd9e95e" name="UiWithScreen" testItemId="2" title="On SF Appointment Home screen">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="6b339e95-1c46-493e-b01a-3078832f5df0" name="UiWithScreen" testItemId="2" title="On SF Appointment Home screen">
       <arguments>
         <argument id="uiConnectionName">
           <value class="value" valueClass="string">Admin</value>
@@ -81,7 +81,7 @@
       <clauses>
         <clause name="substeps" testItemId="3">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="64596a8d-0c78-4093-bcd4-5618e00d7731" name="UiDoAction" testItemId="4" title="Click the New button">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="c7540ede-be20-47e9-9701-a42155e6e6ec" name="UiDoAction" testItemId="4" title="Click the New button">
               <arguments>
                 <argument id="locator">
                   <value class="uiLocator" uri="ui:locator?name=New&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAppointment__c%26action%3DNew"/>
@@ -111,26 +111,12 @@
                 <argument id="interactionDescription">
                   <value class="value" valueClass="string">Click the New button</value>
                 </argument>
-                <argument id="ieClickMethod">
-                  <value class="value" valueClass="string">Default</value>
-                </argument>
               </arguments>
               <generatedParameters>
-                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                <apiParam group="value" name="hover" title="Hover before Clicking">
                   <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                   <type>
                     <booleanType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
-                  <summary>How the click should be executed for Internet Explorer.</summary>
-                  <type>
-                    <choiceType>
-                      <constraints>
-                        <valueConstraint name="valuesSource">com.provar.core.model.base.java.EnumChoiceListValuesSource</valueConstraint>
-                        <valueConstraint name="valuesSourceDependencies">com.provar.core.model.ui.api.ClickMethod</valueConstraint>
-                      </constraints>
-                    </choiceType>
                   </type>
                 </apiParam>
               </generatedParameters>

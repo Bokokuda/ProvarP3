@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase guid="8306924f-58a2-4f64-a589-73c196bfd84e" visibility="Internal">
+<testCase guid="8306924f-58a2-4f64-a589-73c196bfd84e" id="1" visibility="Internal">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="566f587c-ea08-4d1e-bbfc-e4331f582741" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
@@ -50,7 +50,7 @@
         <argument id="webBrowser"/>
       </arguments>
     </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="e6216e40-4ef0-49fe-b6ca-1ae01f90dd2b" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="2" title="Create Object: Doctor__c=&gt;DoctorId">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="123ba477-f7a9-4ae9-9166-6ce5a40dbd43" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="3" title="Create Object: Doctor__c=&gt;DoctorId">
       <arguments>
         <argument id="objectType">
           <value class="value" valueClass="string">Doctor__c</value>
@@ -65,24 +65,54 @@
         <argument id="resultScope">
           <value class="value" valueClass="string">Test</value>
         </argument>
-        <argument argId="ea65555f-5875-487b-8a64-77b248e321ea" id="Office_Name__c">
+        <argument id="Office_Name__c">
           <value class="variable">
             <path element="Office_Name__c"/>
           </value>
         </argument>
-        <argument argId="0540994a-aa72-48b9-a9c2-f605716c1f3c" id="Name">
+        <argument id="Name">
           <value class="variable">
             <path element="Name"/>
           </value>
         </argument>
-        <argument argId="e225daeb-6b87-4f5e-bf88-33f3e549454d" id="Location__Latitude__s">
+        <argument id="Location__Latitude__s">
           <value class="variable">
             <path element="Location__Latitude__s"/>
           </value>
         </argument>
-        <argument argId="d3f43ca7-f218-4ec1-8c86-868beac9f61c" id="Location__Longitude__s">
+        <argument id="Location__Longitude__s">
           <value class="variable">
             <path element="Location__Longitude__s"/>
+          </value>
+        </argument>
+        <argument argId="26448d2b-31bf-4e0f-a449-d5e5dd9c2be2" id="First_Name__c">
+          <value class="variable">
+            <path element="First_Name__c"/>
+          </value>
+        </argument>
+        <argument argId="0b93e676-0af1-439e-bc88-99730cca6236" id="Last_Name__c">
+          <value class="variable">
+            <path element="Last_Name__c"/>
+          </value>
+        </argument>
+        <argument argId="562fb019-241b-4f19-b8de-7433245cb041" id="Phone_Number__c">
+          <value class="variable">
+            <path element="Phone_Number__c"/>
+          </value>
+        </argument>
+        <argument argId="24b32c1f-d71d-44b7-8052-89eb7d2aa388" id="Email__c">
+          <value class="variable">
+            <path element="Email__c"/>
+          </value>
+        </argument>
+        <argument argId="972c0ad8-791f-460b-b0c0-574a6520f5c4" id="Office_Opening_Hours__c">
+          <value class="variable">
+            <path element="Office_Opening_Hours__c"/>
+          </value>
+        </argument>
+        <argument argId="f78736d0-a38c-49bb-b7d3-40ad47647b2d" id="Office_Closing_Hours__c">
+          <value class="variable">
+            <path element="Office_Closing_Hours__c"/>
           </value>
         </argument>
       </arguments>
@@ -95,6 +125,12 @@
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Name" name="Name" title="Name"/>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Location__Latitude__s" name="Location__Latitude__s" title="Location__Latitude__s"/>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Location__Longitude__s" name="Location__Longitude__s" title="Location__Longitude__s"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=First_Name__c" name="First_Name__c" title="First_Name__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Last_Name__c" name="Last_Name__c" title="Last_Name__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Phone_Number__c" name="Phone_Number__c" title="Phone_Number__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Email__c" name="Email__c" title="Email__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Office_Opening_Hours__c" name="Office_Opening_Hours__c" title="Office_Opening_Hours__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Office_Closing_Hours__c" name="Office_Closing_Hours__c" title="Office_Closing_Hours__c"/>
       </generatedParameters>
     </apiCall>
   </steps>
@@ -111,6 +147,24 @@
     <param linkedToUrl="provar:hasvalue:d3f43ca7-f218-4ec1-8c86-868beac9f61c" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Location__Longitude__s" name="Location__Longitude__s" passwordVariableAllowed="true" title="Location__Longitude__s">
       <summary/>
     </param>
+    <param linkedToUrl="provar:hasvalue:26448d2b-31bf-4e0f-a449-d5e5dd9c2be2" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=First_Name__c" name="First_Name__c" passwordVariableAllowed="true" title="First_Name__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:0b93e676-0af1-439e-bc88-99730cca6236" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Last_Name__c" name="Last_Name__c" passwordVariableAllowed="true" title="Last_Name__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:562fb019-241b-4f19-b8de-7433245cb041" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Phone_Number__c" name="Phone_Number__c" passwordVariableAllowed="true" title="Phone_Number__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:24b32c1f-d71d-44b7-8052-89eb7d2aa388" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Email__c" name="Email__c" passwordVariableAllowed="true" title="Email__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:972c0ad8-791f-460b-b0c0-574a6520f5c4" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Office_Opening_Hours__c" name="Office_Opening_Hours__c" passwordVariableAllowed="true" title="Office_Opening_Hours__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:f78736d0-a38c-49bb-b7d3-40ad47647b2d" modelBinding="sf:ui:binding:object?object=Doctor__c&amp;field=Office_Closing_Hours__c" name="Office_Closing_Hours__c" passwordVariableAllowed="true" title="Office_Closing_Hours__c">
+      <summary/>
+    </param>
     <param linkedToUrl="provar:hasvalue:6f6affe1-dae7-48bf-8fa8-17f3f22d9f78" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
       <summary>The name of an already opened connect to re-use.</summary>
       <type>
@@ -123,11 +177,32 @@
       </type>
     </param>
   </params>
+  <outputParams>
+    <param name="DoctorId" passwordVariableAllowed="true" title="DoctorId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="DoctorId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
   <args>
     <argument id="Office_Name__c">
       <value class="funcCall" id="UniqueId">
         <argument id="length">
           <value class="value" valueClass="decimal">10</value>
+        </argument>
+        <argument id="format">
+          <value class="variable">
+            <path element="ALPHA"/>
+          </value>
         </argument>
       </value>
     </argument>
@@ -136,6 +211,11 @@
         <argument id="length">
           <value class="value" valueClass="decimal">10</value>
         </argument>
+        <argument id="format">
+          <value class="variable">
+            <path element="ALPHA"/>
+          </value>
+        </argument>
       </value>
     </argument>
     <argument id="Location__Latitude__s"/>
@@ -143,5 +223,111 @@
     <argument id="reuseConnectionName">
       <value class="value" valueClass="string">Admin</value>
     </argument>
+    <argument id="First_Name__c">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+        <argument id="format">
+          <value class="variable">
+            <path element="ALPHA"/>
+          </value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Last_Name__c">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+        <argument id="format">
+          <value class="variable">
+            <path element="ALPHA"/>
+          </value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Phone_Number__c">
+      <value class="compound">
+        <parts>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">3</value>
+            </argument>
+            <argument id="format">
+              <value class="variable">
+                <path element="NUMERIC"/>
+              </value>
+            </argument>
+          </funcCall>
+          <value valueClass="string">-</value>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">3</value>
+            </argument>
+            <argument id="format">
+              <value class="variable">
+                <path element="NUMERIC"/>
+              </value>
+            </argument>
+          </funcCall>
+          <value valueClass="string">-</value>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">4</value>
+            </argument>
+            <argument id="format">
+              <value class="variable">
+                <path element="NUMERIC"/>
+              </value>
+            </argument>
+          </funcCall>
+        </parts>
+      </value>
+    </argument>
+    <argument id="Email__c">
+      <value class="compound">
+        <parts>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">10</value>
+            </argument>
+          </funcCall>
+          <value valueClass="string">@</value>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">10</value>
+            </argument>
+            <argument id="format">
+              <value class="variable">
+                <path element="ALPHA"/>
+              </value>
+            </argument>
+          </funcCall>
+          <value valueClass="string">.</value>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">3</value>
+            </argument>
+            <argument id="format">
+              <value class="variable">
+                <path element="ALPHA"/>
+              </value>
+            </argument>
+          </funcCall>
+        </parts>
+      </value>
+    </argument>
+    <argument id="Office_Opening_Hours__c">
+      <value class="value" valueClass="string">8:00 AM</value>
+    </argument>
+    <argument id="Office_Closing_Hours__c">
+      <value class="value" valueClass="string">5:00 PM</value>
+    </argument>
   </args>
+  <outputArgs>
+    <outputArgument id="DoctorId">
+      <name class="value" valueClass="string">DoctorId</name>
+    </outputArgument>
+  </outputArgs>
 </testCase>

@@ -236,6 +236,22 @@
       </type>
     </param>
   </params>
+  <outputParams>
+    <param name="PrescriptionId" passwordVariableAllowed="true" title="PrescriptionId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="PrescriptionId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
   <args>
     <argument id="Dosage_Unit__c">
       <value class="value" valueClass="string">mL</value>
@@ -274,4 +290,9 @@
       <value class="value" valueClass="string">Admin</value>
     </argument>
   </args>
+  <outputArgs>
+    <outputArgument id="PrescriptionId">
+      <name class="value" valueClass="string">PrescriptionId</name>
+    </outputArgument>
+  </outputArgs>
 </testCase>

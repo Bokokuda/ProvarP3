@@ -163,6 +163,22 @@
       <summary/>
     </param>
   </params>
+  <outputParams>
+    <param name="ApprovedMedicalDocumentId" passwordVariableAllowed="true" title="ApprovedMedicalDocumentId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="ApprovedMedicalDocumentId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
   <args>
     <argument id="reuseConnectionName">
       <value class="value" valueClass="string">Admin</value>
@@ -196,4 +212,9 @@
     </argument>
     <argument id="Approving_Authority__c"/>
   </args>
+  <outputArgs>
+    <outputArgument id="ApprovedMedicalDocumentId">
+      <name class="value" valueClass="string">ApprovedMedicalDocumentId</name>
+    </outputArgument>
+  </outputArgs>
 </testCase>

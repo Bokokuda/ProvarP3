@@ -25,7 +25,11 @@
         <argument id="closeAllPrimaryTabs">
           <value class="value" valueClass="boolean">true</value>
         </argument>
-        <argument id="reuseConnectionName"/>
+        <argument argId="3bc78d4c-f414-4e7f-9f34-e968f936fb0f" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
         <argument id="alreadyOpenBehaviour">
           <value class="value" valueClass="string">Fail</value>
         </argument>
@@ -533,7 +537,7 @@
             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="1958f460-a769-48cc-8381-c5797f203442" isTitleUpdated="true" name="UiDoAction" testItemId="11" title="Set the Assigned Doctor field to {AssignedDoctorValue}">
               <arguments>
                 <argument id="locator">
-                  <value class="uiLocator" uri="ui:locator?name=Assigned_Doctor__c&amp;path=New%2FInformation%2FLayoutRow%2FAssigned_Doctor__c"/>
+                  <value class="uiLocator" uri="ui:locator?binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DAppointment__c%26field%3DAssigned_Doctor__c&amp;name=Assigned_Doctor__c"/>
                 </argument>
                 <argument id="interaction">
                   <value class="uiInteraction" uri="ui:interaction?name=set"/>
@@ -566,11 +570,11 @@
                 </argument>
                 <argument id="locatorParams"/>
                 <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Set the Assigned_Doctor__c field to {AssignedDoctorValue}</value>
+                  <value class="value" valueClass="string">Set the Assigned Doctor reference to {AssignedDoctorValue}</value>
                 </argument>
               </arguments>
               <generatedParameters>
-                <apiParam group="value" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Assigned_Doctor__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
                   <summary>The value to be populated.</summary>
                   <type>
                     <textType/>
@@ -787,21 +791,43 @@
         <textType/>
       </type>
     </param>
+    <param linkedToUrl="provar:hasvalue:3bc78d4c-f414-4e7f-9f34-e968f936fb0f" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
   </params>
   <args>
     <argument id="MedicalExamValue">
       <value class="value" valueClass="string">Medical Exam</value>
     </argument>
     <argument id="AppointmentDateValue">
-      <value class="value" valueClass="string">TODAY</value>
+      <value class="variable">
+        <path element="NOW"/>
+      </value>
     </argument>
     <argument id="ScheduledValue">
       <value class="value" valueClass="string">Scheduled</value>
     </argument>
-    <argument id="NotesValue"/>
+    <argument id="NotesValue">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+      </value>
+    </argument>
     <argument id="RelatedClaimValue"/>
     <argument id="RelatedAppealValue"/>
     <argument id="AssignedDoctorValue"/>
     <argument id="VeteranValue"/>
+    <argument id="reuseConnectionName">
+      <value class="value" valueClass="string">Admin</value>
+    </argument>
   </args>
 </testCase>

@@ -191,6 +191,22 @@
       <summary/>
     </param>
   </params>
+  <outputParams>
+    <param name="AppointmentId" passwordVariableAllowed="true" title="AppointmentId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="AppointmentId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
   <args>
     <argument id="reuseConnectionName">
       <value class="value" valueClass="string">Admin</value>
@@ -208,4 +224,9 @@
       </value>
     </argument>
   </args>
+  <outputArgs>
+    <outputArgument id="AppointmentId">
+      <name class="value" valueClass="string">AppointmentId</name>
+    </outputArgument>
+  </outputArgs>
 </testCase>

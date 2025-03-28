@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase guid="f89a7412-146e-4647-bfc6-5181d205ebc4" id="1" visibility="Internal">
+<testCase guid="2d32d6ad-5517-44e9-93ce-3c524a489b43" id="20" visibility="Internal">
   <summary/>
   <steps>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="a9f2cc01-6146-4123-a596-7ddc4b034234" name="ApexConnect" testItemId="4" title="Salesforce Connect: Admin (Test)">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="01f6dac4-0854-4a2e-a3e7-7e4caff02c61" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
       <arguments>
         <argument id="connectionName">
           <value class="value" valueClass="string">Admin</value>
@@ -25,7 +25,11 @@
         <argument id="closeAllPrimaryTabs">
           <value class="value" valueClass="boolean">true</value>
         </argument>
-        <argument id="reuseConnectionName"/>
+        <argument argId="0800128b-e7f8-4e67-9afd-4ac801dde266" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
         <argument id="alreadyOpenBehaviour">
           <value class="value" valueClass="string">Fail</value>
         </argument>
@@ -46,10 +50,22 @@
         <argument id="webBrowser"/>
       </arguments>
     </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="5abed631-a870-48e2-9a40-3471fe96d328" name="ApexSoqlQuery" testItemId="8" title="SOQL Query: select Id from Veteran__c limit 1=&gt;VeteranRows">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="60483ebb-3eac-4c3e-9a13-dea0d139e4b3" name="ApexSoqlQuery" testItemId="3" title="SOQL Query: select Id from Veteran__c where Name = '{StringNormalize(Veteran__c)}' limit 1=&gt;VeteranRows">
       <arguments>
         <argument id="soqlQuery">
-          <value class="value" valueClass="string">select Id from Veteran__c limit 1</value>
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Id from Veteran__c where Name = '</value>
+              <funcCall id="StringNormalize">
+                <argument id="sourceString">
+                  <value class="variable">
+                    <path element="Veteran__c"/>
+                  </value>
+                </argument>
+              </funcCall>
+              <value valueClass="string">' limit 1</value>
+            </parts>
+          </value>
         </argument>
         <argument id="apexConnectionName">
           <value class="value" valueClass="string">Admin</value>
@@ -65,45 +81,7 @@
         </argument>
       </arguments>
     </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="3a29b209-985a-4fe6-8fe3-d14261923e76" name="ApexSoqlQuery" testItemId="9" title="SOQL Query: select Id from User where ProfileId = '00eKZ000000giYs' limit 1=&gt;CaseWorkerRows">
-      <arguments>
-        <argument id="soqlQuery">
-          <value class="value" valueClass="string">select Id from User where ProfileId = '00eKZ000000giYs' limit 1</value>
-        </argument>
-        <argument id="apexConnectionName">
-          <value class="value" valueClass="string">Admin</value>
-        </argument>
-        <argument id="resultListName">
-          <value class="value" valueClass="string">CaseWorkerRows</value>
-        </argument>
-        <argument id="soqlColumnAliases">
-          <value class="valueList" mutable="Mutable"/>
-        </argument>
-        <argument id="resultScope">
-          <value class="value" valueClass="string">Test</value>
-        </argument>
-      </arguments>
-    </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="163723b6-b0fd-494e-b739-ab79a9421f4c" name="ApexSoqlQuery" testItemId="6" title="SOQL Query: SELECT Id, Name FROM RecordType WHERE SObjectType = 'Claim__c' limit 1=&gt;RecordIdRows">
-      <arguments>
-        <argument id="soqlQuery">
-          <value class="value" valueClass="string">SELECT Id, Name FROM RecordType WHERE SObjectType = 'Claim__c' limit 1</value>
-        </argument>
-        <argument id="apexConnectionName">
-          <value class="value" valueClass="string">Admin</value>
-        </argument>
-        <argument id="resultListName">
-          <value class="value" valueClass="string">RecordIdRows</value>
-        </argument>
-        <argument id="soqlColumnAliases">
-          <value class="valueList" mutable="Mutable"/>
-        </argument>
-        <argument id="resultScope">
-          <value class="value" valueClass="string">Test</value>
-        </argument>
-      </arguments>
-    </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="1ae22fa5-eb60-40f6-8352-575e8f7ef742" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="5" title="Create Object: Claim__c=&gt;ClaimId">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="35d8ad57-569d-4771-a3d6-7102c0051533" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="4" title="Create Object: Claim__c=&gt;ClaimId">
       <arguments>
         <argument id="objectType">
           <value class="value" valueClass="string">Claim__c</value>
@@ -118,27 +96,136 @@
         <argument id="resultScope">
           <value class="value" valueClass="string">Test</value>
         </argument>
-        <argument id="Current_Status__c">
-          <value class="value" valueClass="string">Received</value>
-        </argument>
-        <argument id="Case_Worker__c">
-          <value class="variable">
-            <path element="CaseWorkerRows"/>
-            <path element="Id"/>
-          </value>
-        </argument>
-        <argument id="Claim_Type__c">
+        <argument argId="d0acd91f-4565-4cfd-9182-ccbfc3aaf727" id="Claim_Type__c">
           <value class="variable">
             <path element="Claim_Type__c"/>
           </value>
         </argument>
-        <argument id="RecordTypeId">
+        <argument argId="b4f1f761-cbe1-4ca7-ad64-c98e42a81989" id="Current_Housing_Status__c">
           <value class="variable">
-            <path element="RecordIdRows"/>
-            <path element="Id"/>
+            <path element="Current_Housing_Status__c"/>
           </value>
         </argument>
-        <argument id="Decision_Date__c"/>
+        <argument argId="b82e8563-2704-4c66-ad12-a45914219a3d" id="Current_Status__c">
+          <value class="variable">
+            <path element="Current_Status__c"/>
+          </value>
+        </argument>
+        <argument argId="840924cb-7026-44de-8c94-244bb859bfc6" id="Denial_Reason__c">
+          <value class="variable">
+            <path element="Denial_Reason__c"/>
+          </value>
+        </argument>
+        <argument argId="63117f7b-aada-4633-906e-2a0adf7f82ba" id="Disability_Status__c">
+          <value class="variable">
+            <path element="Disability_Status__c"/>
+          </value>
+        </argument>
+        <argument argId="a58259ba-6a64-4a86-9c36-95ae798f18d2" id="Health_Insurance_Status__c">
+          <value class="variable">
+            <path element="Health_Insurance_Status__c"/>
+          </value>
+        </argument>
+        <argument argId="3a8cec66-82d1-4ae5-a6a3-e40d7bdb47d6" id="Type_of_Education_or_Training__c">
+          <value class="variable">
+            <path element="Type_of_Education_or_Training__c"/>
+          </value>
+        </argument>
+        <argument argId="166bec76-14f1-463a-b6f7-d4c35be104f1" id="Annual_Income__c">
+          <value class="variable">
+            <path element="Annual_Income__c"/>
+          </value>
+        </argument>
+        <argument argId="6da1b447-de86-4cbd-b073-a1b46f359fc5" id="Appeal_Available__c">
+          <value class="variable">
+            <path element="Appeal_Available__c"/>
+          </value>
+        </argument>
+        <argument argId="68117f54-eb64-4614-afaf-a9b6a6cfcb68" id="Case_Worker__c">
+          <value class="variable">
+            <path element="Case_Worker__c"/>
+          </value>
+        </argument>
+        <argument argId="e48b21f8-c829-488b-aa7b-aa3b392cfa9d" id="Credit_Score_Provided__c">
+          <value class="variable">
+            <path element="Credit_Score_Provided__c"/>
+          </value>
+        </argument>
+        <argument argId="52676770-8eaf-4e4b-84a4-d90c4def3930" id="Credit_Score__c">
+          <value class="variable">
+            <path element="Credit_Score__c"/>
+          </value>
+        </argument>
+        <argument argId="2cecdd65-a16d-4a05-b235-0bc5785e5c71" id="Current_Health_Status__c">
+          <value class="variable">
+            <path element="Current_Health_Status__c"/>
+          </value>
+        </argument>
+        <argument argId="da355531-b693-4b7d-aabf-1508dc5bfb11" id="Date_of_Disability_Onset__c">
+          <value class="variable">
+            <path element="Date_of_Disability_Onset__c"/>
+          </value>
+        </argument>
+        <argument argId="e02aeed1-7791-4463-9187-30e71de9ecac" id="Date_of_Injury_or_Illness__c">
+          <value class="variable">
+            <path element="Date_of_Injury_or_Illness__c"/>
+          </value>
+        </argument>
+        <argument argId="dbcef40f-6f16-4668-9887-30ec7798f0f6" id="Decision_Date__c">
+          <value class="variable">
+            <path element="Decision_Date__c"/>
+          </value>
+        </argument>
+        <argument argId="affdae82-6ab4-4e36-8687-99ef9ff3a921" id="Decision_Reason__c">
+          <value class="variable">
+            <path element="Decision_Reason__c"/>
+          </value>
+        </argument>
+        <argument argId="d942b556-0234-47bd-a218-48ed06ead58d" id="File_Count__c">
+          <value class="variable">
+            <path element="File_Count__c"/>
+          </value>
+        </argument>
+        <argument argId="8f20cea7-ac83-43e0-8bd2-d0f941dc2338" id="Files_Attached__c">
+          <value class="variable">
+            <path element="Files_Attached__c"/>
+          </value>
+        </argument>
+        <argument argId="462f1643-2357-48fa-a330-8dfea8f951a6" id="Institution_for_Education_or_Training__c">
+          <value class="variable">
+            <path element="Institution_for_Education_or_Training__c"/>
+          </value>
+        </argument>
+        <argument argId="2ae423ad-8cf6-4e8a-bbe9-39f436352408" id="Medical_Records_Attached__c">
+          <value class="variable">
+            <path element="Medical_Records_Attached__c"/>
+          </value>
+        </argument>
+        <argument argId="6448d6cd-5371-44cb-a89b-c9eb934f0af3" id="Permanent_Disability__c">
+          <value class="variable">
+            <path element="Permanent_Disability__c"/>
+          </value>
+        </argument>
+        <argument argId="2c77e55e-945c-4d10-bc2f-91abeb13fe8b" id="Program_End_Date__c">
+          <value class="variable">
+            <path element="Program_End_Date__c"/>
+          </value>
+        </argument>
+        <argument argId="227527ab-ac13-4bdb-a915-f85b2b9c44da" id="Program_Start_Date__c">
+          <value class="variable">
+            <path element="Program_Start_Date__c"/>
+          </value>
+        </argument>
+        <argument argId="7ec7c0ce-b1af-42d3-919d-5a446ab21cc0" id="Proof_of_Disability__c">
+          <value class="variable">
+            <path element="Proof_of_Disability__c"/>
+          </value>
+        </argument>
+        <argument argId="b8e12ff7-8f56-4168-9107-5461d75c4497" id="Service_Connected_Injury_or_Illness__c">
+          <value class="variable">
+            <path element="Service_Connected_Injury_or_Illness__c"/>
+          </value>
+        </argument>
         <argument id="Veteran__c">
           <value class="variable">
             <path element="VeteranRows"/>
@@ -146,19 +233,191 @@
           </value>
         </argument>
       </arguments>
-      <parameterValueSources/>
       <parameterGeneratorProperties>
         <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
         <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Claim__c</propertyValue>
       </parameterGeneratorProperties>
       <generatedParameters>
-        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Current_Status__c" name="Current_Status__c" title="Current_Status__c"/>
-        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Case_Worker__c" name="Case_Worker__c" title="Case_Worker__c"/>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Claim_Type__c" name="Claim_Type__c" title="Claim_Type__c"/>
-        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Current_Housing_Status__c" name="Current_Housing_Status__c" title="Current_Housing_Status__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Current_Status__c" name="Current_Status__c" title="Current_Status__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Denial_Reason__c" name="Denial_Reason__c" title="Denial_Reason__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Disability_Status__c" name="Disability_Status__c" title="Disability_Status__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Health_Insurance_Status__c" name="Health_Insurance_Status__c" title="Health_Insurance_Status__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Type_of_Education_or_Training__c" name="Type_of_Education_or_Training__c" title="Type_of_Education_or_Training__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Annual_Income__c" name="Annual_Income__c" title="Annual_Income__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Appeal_Available__c" name="Appeal_Available__c" title="Appeal_Available__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Case_Worker__c" name="Case_Worker__c" title="Case_Worker__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Credit_Score_Provided__c" name="Credit_Score_Provided__c" title="Credit_Score_Provided__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Credit_Score__c" name="Credit_Score__c" title="Credit_Score__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Current_Health_Status__c" name="Current_Health_Status__c" title="Current_Health_Status__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Date_of_Disability_Onset__c" name="Date_of_Disability_Onset__c" title="Date_of_Disability_Onset__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Date_of_Injury_or_Illness__c" name="Date_of_Injury_or_Illness__c" title="Date_of_Injury_or_Illness__c"/>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Decision_Date__c" name="Decision_Date__c" title="Decision_Date__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Decision_Reason__c" name="Decision_Reason__c" title="Decision_Reason__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=File_Count__c" name="File_Count__c" title="File_Count__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Files_Attached__c" name="Files_Attached__c" title="Files_Attached__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Institution_for_Education_or_Training__c" name="Institution_for_Education_or_Training__c" title="Institution_for_Education_or_Training__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Medical_Records_Attached__c" name="Medical_Records_Attached__c" title="Medical_Records_Attached__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Permanent_Disability__c" name="Permanent_Disability__c" title="Permanent_Disability__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Program_End_Date__c" name="Program_End_Date__c" title="Program_End_Date__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Program_Start_Date__c" name="Program_Start_Date__c" title="Program_Start_Date__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Proof_of_Disability__c" name="Proof_of_Disability__c" title="Proof_of_Disability__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Service_Connected_Injury_or_Illness__c" name="Service_Connected_Injury_or_Illness__c" title="Service_Connected_Injury_or_Illness__c"/>
         <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Veteran__c" name="Veteran__c" title="Veteran__c"/>
       </generatedParameters>
     </apiCall>
   </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:0800128b-e7f8-4e67-9afd-4ac801dde266" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:fa9d18b1-37ad-4b46-9e70-a32f694f8d77" modelBinding="sf:ui:binding:object?object=Appointment__c&amp;field=Veteran__c" name="Veteran__c" passwordVariableAllowed="true" title="Veteran__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:d0acd91f-4565-4cfd-9182-ccbfc3aaf727" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Claim_Type__c" name="Claim_Type__c" passwordVariableAllowed="true" title="Claim_Type__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:b4f1f761-cbe1-4ca7-ad64-c98e42a81989" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Current_Housing_Status__c" name="Current_Housing_Status__c" passwordVariableAllowed="true" title="Current_Housing_Status__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:b82e8563-2704-4c66-ad12-a45914219a3d" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Current_Status__c" name="Current_Status__c" passwordVariableAllowed="true" title="Current_Status__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:840924cb-7026-44de-8c94-244bb859bfc6" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Denial_Reason__c" name="Denial_Reason__c" passwordVariableAllowed="true" title="Denial_Reason__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:63117f7b-aada-4633-906e-2a0adf7f82ba" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Disability_Status__c" name="Disability_Status__c" passwordVariableAllowed="true" title="Disability_Status__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:a58259ba-6a64-4a86-9c36-95ae798f18d2" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Health_Insurance_Status__c" name="Health_Insurance_Status__c" passwordVariableAllowed="true" title="Health_Insurance_Status__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:3a8cec66-82d1-4ae5-a6a3-e40d7bdb47d6" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Type_of_Education_or_Training__c" name="Type_of_Education_or_Training__c" passwordVariableAllowed="true" title="Type_of_Education_or_Training__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:166bec76-14f1-463a-b6f7-d4c35be104f1" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Annual_Income__c" name="Annual_Income__c" passwordVariableAllowed="true" title="Annual_Income__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:6da1b447-de86-4cbd-b073-a1b46f359fc5" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Appeal_Available__c" name="Appeal_Available__c" passwordVariableAllowed="true" title="Appeal_Available__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:68117f54-eb64-4614-afaf-a9b6a6cfcb68" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Case_Worker__c" name="Case_Worker__c" passwordVariableAllowed="true" title="Case_Worker__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:e48b21f8-c829-488b-aa7b-aa3b392cfa9d" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Credit_Score_Provided__c" name="Credit_Score_Provided__c" passwordVariableAllowed="true" title="Credit_Score_Provided__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:52676770-8eaf-4e4b-84a4-d90c4def3930" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Credit_Score__c" name="Credit_Score__c" passwordVariableAllowed="true" title="Credit_Score__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:2cecdd65-a16d-4a05-b235-0bc5785e5c71" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Current_Health_Status__c" name="Current_Health_Status__c" passwordVariableAllowed="true" title="Current_Health_Status__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:da355531-b693-4b7d-aabf-1508dc5bfb11" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Date_of_Disability_Onset__c" name="Date_of_Disability_Onset__c" passwordVariableAllowed="true" title="Date_of_Disability_Onset__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:e02aeed1-7791-4463-9187-30e71de9ecac" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Date_of_Injury_or_Illness__c" name="Date_of_Injury_or_Illness__c" passwordVariableAllowed="true" title="Date_of_Injury_or_Illness__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:dbcef40f-6f16-4668-9887-30ec7798f0f6" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Decision_Date__c" name="Decision_Date__c" passwordVariableAllowed="true" title="Decision_Date__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:affdae82-6ab4-4e36-8687-99ef9ff3a921" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Decision_Reason__c" name="Decision_Reason__c" passwordVariableAllowed="true" title="Decision_Reason__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:d942b556-0234-47bd-a218-48ed06ead58d" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=File_Count__c" name="File_Count__c" passwordVariableAllowed="true" title="File_Count__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:8f20cea7-ac83-43e0-8bd2-d0f941dc2338" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Files_Attached__c" name="Files_Attached__c" passwordVariableAllowed="true" title="Files_Attached__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:462f1643-2357-48fa-a330-8dfea8f951a6" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Institution_for_Education_or_Training__c" name="Institution_for_Education_or_Training__c" passwordVariableAllowed="true" title="Institution_for_Education_or_Training__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:2ae423ad-8cf6-4e8a-bbe9-39f436352408" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Medical_Records_Attached__c" name="Medical_Records_Attached__c" passwordVariableAllowed="true" title="Medical_Records_Attached__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:6448d6cd-5371-44cb-a89b-c9eb934f0af3" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Permanent_Disability__c" name="Permanent_Disability__c" passwordVariableAllowed="true" title="Permanent_Disability__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:2c77e55e-945c-4d10-bc2f-91abeb13fe8b" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Program_End_Date__c" name="Program_End_Date__c" passwordVariableAllowed="true" title="Program_End_Date__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:227527ab-ac13-4bdb-a915-f85b2b9c44da" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Program_Start_Date__c" name="Program_Start_Date__c" passwordVariableAllowed="true" title="Program_Start_Date__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:7ec7c0ce-b1af-42d3-919d-5a446ab21cc0" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Proof_of_Disability__c" name="Proof_of_Disability__c" passwordVariableAllowed="true" title="Proof_of_Disability__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:b8e12ff7-8f56-4168-9107-5461d75c4497" modelBinding="sf:ui:binding:object?object=Claim__c&amp;field=Service_Connected_Injury_or_Illness__c" name="Service_Connected_Injury_or_Illness__c" passwordVariableAllowed="true" title="Service_Connected_Injury_or_Illness__c">
+      <summary/>
+    </param>
+  </params>
+  <outputParams>
+    <param name="ClaimId" passwordVariableAllowed="true" title="ClaimId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="ClaimId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="reuseConnectionName">
+      <value class="value" valueClass="string">Admin</value>
+    </argument>
+    <argument id="Veteran__c"/>
+    <argument id="Claim_Type__c"/>
+    <argument id="Current_Housing_Status__c"/>
+    <argument id="Current_Status__c">
+      <value class="value" valueClass="string">Received</value>
+    </argument>
+    <argument id="Denial_Reason__c"/>
+    <argument id="Disability_Status__c"/>
+    <argument id="Health_Insurance_Status__c"/>
+    <argument id="Type_of_Education_or_Training__c"/>
+    <argument id="Annual_Income__c"/>
+    <argument id="Appeal_Available__c"/>
+    <argument id="Case_Worker__c"/>
+    <argument id="Credit_Score_Provided__c"/>
+    <argument id="Credit_Score__c"/>
+    <argument id="Current_Health_Status__c"/>
+    <argument id="Date_of_Disability_Onset__c"/>
+    <argument id="Date_of_Injury_or_Illness__c"/>
+    <argument id="Decision_Date__c"/>
+    <argument id="Decision_Reason__c"/>
+    <argument id="File_Count__c"/>
+    <argument id="Files_Attached__c"/>
+    <argument id="Institution_for_Education_or_Training__c"/>
+    <argument id="Medical_Records_Attached__c"/>
+    <argument id="Permanent_Disability__c"/>
+    <argument id="Program_End_Date__c"/>
+    <argument id="Program_Start_Date__c"/>
+    <argument id="Proof_of_Disability__c"/>
+    <argument id="Service_Connected_Injury_or_Illness__c"/>
+  </args>
+  <outputArgs>
+    <outputArgument id="AppointmentId">
+      <name class="value" valueClass="string">AppointmentId</name>
+    </outputArgument>
+    <outputArgument id="ClaimId">
+      <name class="value" valueClass="string">ClaimId</name>
+    </outputArgument>
+  </outputArgs>
 </testCase>
