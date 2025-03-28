@@ -501,6 +501,13 @@
                         </apiParam>
                       </generatedParameters>
                     </apiCall>
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.Fail" guid="730696a2-8b60-4614-a9ad-da089827053c" name="Fail" testItemId="85" title="Fail Test: Doctor name should not take anything other than alphabetic characters">
+                      <arguments>
+                        <argument id="message">
+                          <value class="value" valueClass="string">Doctor name should not take anything other than alphabetic characters</value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="9236a544-7a83-43bd-b377-a28e29729983" name="UiDoAction" testItemId="9" title="Set the Office Name field to ONPXN 38217">
                       <arguments>
                         <argument id="locator">
