@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testPlanInstance guid="c5349959-e307-4ab3-af14-a626b696935f" testCaseId="4ce749b1-e862-4640-8b1a-da26161befd5" testCasePath="tests/Veteran Care Portal/Edit Medical History.testcase">
+  <planSettings>
+    <planSetting name="browserProvider">
+      <value valueClass="string">Desktop:Full Screen</value>
+    </planSetting>
+    <planSetting name="webBrowser">
+      <value valueClass="string">Chrome</value>
+    </planSetting>
+    <planSetting name="testEnvironment">
+      <value valueClass="string">33e4963f-47b8-4830-90f3-0d04ba9a2922</value>
+    </planSetting>
+  </planSettings>
+  <planFeatures/>
+</testPlanInstance>

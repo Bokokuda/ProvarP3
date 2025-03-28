@@ -257,6 +257,14 @@
                   "default" : true
                 } ],
                 "elements" : [ ]
+              }, {
+                "componentId" : "3fbc0344-2246-4793-9d4a-1924063eb9de",
+                "type" : "component::7183d4dc-a158-485c-b991-2e912034d45f",
+                "label" : "DateOfBirthError",
+                "selectors" : [ {
+                  "xpath" : ".//div[contains(@class,'flowruntime-input-error') and contains(@class,'slds-form-element__help') and @role='status']/lightning-formatted-rich-text"
+                } ],
+                "elements" : [ ]
               } ]
             } ]
           } ]
@@ -317,6 +325,14 @@
                   "comparisonType" : "equals",
                   "locatable" : true,
                   "default" : true
+                } ],
+                "elements" : [ ]
+              }, {
+                "componentId" : "abbe7d83-79b0-4acb-8aba-5e238f4ea425",
+                "type" : "component::7183d4dc-a158-485c-b991-2e912034d45f",
+                "label" : "CreditScoreError",
+                "selectors" : [ {
+                  "xpath" : ".//div[contains(@class,'flowruntime-input-error') and contains(@class,'slds-form-element__help') and @role='status']/lightning-formatted-rich-text"
                 } ],
                 "elements" : [ ]
               } ]
@@ -445,6 +461,14 @@
                   "default" : true
                 } ],
                 "elements" : [ ]
+              }, {
+                "componentId" : "53c30c35-fddc-4ffb-a567-23790646418d",
+                "type" : "component::7183d4dc-a158-485c-b991-2e912034d45f",
+                "label" : "MilitaryServiceStartDateError",
+                "selectors" : [ {
+                  "xpath" : ".//div[contains(@class,'flowruntime-input-error') and contains(@class,'slds-form-element__help') and @role='status']/lightning-formatted-rich-text"
+                } ],
+                "elements" : [ ]
               } ]
             } ]
           } ]
@@ -505,6 +529,14 @@
                   "comparisonType" : "equals",
                   "locatable" : true,
                   "default" : true
+                } ],
+                "elements" : [ ]
+              }, {
+                "componentId" : "918d69c0-3e0e-41c0-a791-3f1bfc13820a",
+                "type" : "component::7183d4dc-a158-485c-b991-2e912034d45f",
+                "label" : "MilitaryServiceEndDateError",
+                "selectors" : [ {
+                  "xpath" : ".//div[contains(@class,'flowruntime-input-error') and contains(@class,'slds-form-element__help') and @role='status']/lightning-formatted-rich-text"
                 } ],
                 "elements" : [ ]
               } ]
