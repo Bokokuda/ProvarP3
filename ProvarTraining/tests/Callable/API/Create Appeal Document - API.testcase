@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="b8317a38-5678-4ba1-9fa2-76bdd7652d7c" id="20" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="37501b7c-4e8b-400e-80e6-82518b6c024b" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">8ed1ef49-514a-49c5-b92f-a3bdb1cc532e</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Veteran_Management</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument argId="0800128b-e7f8-4e67-9afd-4ac801dde266" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="09c21573-2001-4b4a-8a09-0f4c9727d036" name="ApexSoqlQuery" testItemId="5" title="SOQL Query: select Id from Appeal__c where Name = '{Appeal__c}' limit 1=&gt;AppealRow">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Id from Appeal__c where Name = '</value>
+              <variable>
+                <path element="Appeal__c"/>
+              </variable>
+              <value valueClass="string">' limit 1</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">AppealRow</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="3ed13e63-c556-4ea8-91cf-36bc3d901dfb" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="4" title="Create Object: Appeal_Document__c=&gt;AppealDocumentId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Appeal_Document__c</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">AppealDocumentId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="c52ea101-9fdd-486d-96c8-aac627f947dc" id="Appeal__c">
+          <value class="variable">
+            <path element="AppealRow"/>
+            <path element="Id"/>
+          </value>
+        </argument>
+        <argument argId="9bf2db3f-9dc3-4a89-94d9-7644e560014e" id="Document_Type__c">
+          <value class="variable">
+            <path element="Document_Type__c"/>
+          </value>
+        </argument>
+        <argument argId="3ef79554-6d16-4d3c-82c4-64c073f740f7" id="Name">
+          <value class="variable">
+            <path element="Name"/>
+          </value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Appeal_Document__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal_Document__c&amp;field=Appeal__c" name="Appeal__c" title="Appeal__c">
+          <summary>Corresponding Appeal case that this document relates to</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal_Document__c&amp;field=Document_Type__c" name="Document_Type__c" title="Document_Type__c">
+          <summary>What kind of document is being submitted for the appeal</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal_Document__c&amp;field=Name" name="Name" title="Name"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:0800128b-e7f8-4e67-9afd-4ac801dde266" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:c52ea101-9fdd-486d-96c8-aac627f947dc" modelBinding="sf:ui:binding:object?object=Appeal_Document__c&amp;field=Appeal__c" name="Appeal__c" passwordVariableAllowed="true" title="Appeal__c">
+      <summary>Corresponding Appeal case that this document relates to</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:9bf2db3f-9dc3-4a89-94d9-7644e560014e" modelBinding="sf:ui:binding:object?object=Appeal_Document__c&amp;field=Document_Type__c" name="Document_Type__c" passwordVariableAllowed="true" title="Document_Type__c">
+      <summary>What kind of document is being submitted for the appeal</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:3ef79554-6d16-4d3c-82c4-64c073f740f7" modelBinding="sf:ui:binding:object?object=Appeal_Document__c&amp;field=Name" name="Name" passwordVariableAllowed="true" title="Name">
+      <summary/>
+    </param>
+  </params>
+  <outputParams>
+    <param name="AppealDocumentId" passwordVariableAllowed="true" title="AppealDocumentId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="AppealDocumentId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="reuseConnectionName">
+      <value class="value" valueClass="string">Admin</value>
+    </argument>
+    <argument id="Document_Type__c"/>
+    <argument id="Appeal__c"/>
+    <argument id="Name"/>
+  </args>
+  <outputArgs>
+    <outputArgument id="AppointmentId">
+      <name class="value" valueClass="string">AppointmentId</name>
+    </outputArgument>
+    <outputArgument id="AppealDocumentId">
+      <name class="value" valueClass="string">AppealDocumentId</name>
+    </outputArgument>
+  </outputArgs>
+</testCase>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="aff506cc-9045-4479-8a37-80b5be04eb34" id="20" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="17743b87-8b7f-450a-b27c-bd0d0ea4b0ce" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">8ed1ef49-514a-49c5-b92f-a3bdb1cc532e</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Veteran_Management</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument argId="0800128b-e7f8-4e67-9afd-4ac801dde266" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="8e6dae69-2c45-43c2-9148-cced5226cf23" name="ApexSoqlQuery" testItemId="5" title="SOQL Query: select Id from Claim__c where Name= '{Claim__c}' limit 1=&gt;ClaimRow">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Id from Claim__c where Name= '</value>
+              <variable>
+                <path element="Claim__c"/>
+              </variable>
+              <value valueClass="string">' limit 1</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">ClaimRow</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="95317e96-92c5-47c8-a32c-2a438f112d8b" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="4" title="Create Object: Appeal__c=&gt;AppealId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Appeal__c</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">AppealId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="4fa69d48-07dd-4475-9bca-03b4118bf758" id="Appeal_Decision__c">
+          <value class="variable">
+            <path element="Appeal_Decision__c"/>
+          </value>
+        </argument>
+        <argument argId="45e25a1e-cfbb-4ea3-9e39-2207375aed94" id="Appeal_Status__c">
+          <value class="variable">
+            <path element="Appeal_Status__c"/>
+          </value>
+        </argument>
+        <argument argId="798fd573-0a71-41dd-ac8b-461b3371af57" id="Appeal_Type__c">
+          <value class="variable">
+            <path element="Appeal_Type__c"/>
+          </value>
+        </argument>
+        <argument argId="48833033-3b3c-4bd6-8a5c-ff1e6287d065" id="Appeal_Submitted_by__c">
+          <value class="variable">
+            <path element="Appeal_Submitted_by__c"/>
+          </value>
+        </argument>
+        <argument argId="ad808134-114e-4191-882c-2dfad9255df2" id="Case_Worker__c">
+          <value class="variable">
+            <path element="Case_Worker__c"/>
+          </value>
+        </argument>
+        <argument argId="50dc446e-5f46-4dd3-832c-b2307eba64eb" id="Claim__c">
+          <value class="variable">
+            <path element="ClaimRow"/>
+            <path element="Id"/>
+          </value>
+        </argument>
+        <argument argId="91f9e860-5f73-46b0-ad3e-6476d84d0401" id="Decision_Date__c">
+          <value class="variable">
+            <path element="Decision_Date__c"/>
+          </value>
+        </argument>
+        <argument argId="0cd6a06b-4262-4225-b5d7-31364f4cf512" id="Reason_for_Appeal__c">
+          <value class="variable">
+            <path element="Reason_for_Appeal__c"/>
+          </value>
+        </argument>
+        <argument argId="146b9eed-c08f-4b49-9dcf-782cc1fed422" id="Submission_Date__c">
+          <value class="variable">
+            <path element="Submission_Date__c"/>
+          </value>
+        </argument>
+        <argument argId="3e7adaa3-1d97-4074-98e2-65562bc66883" id="Hearing_Date__c">
+          <value class="variable">
+            <path element="Hearing_Date__c"/>
+          </value>
+        </argument>
+        <argument argId="bfc5ec1a-0c42-4d31-b151-87466a7981ef" id="Request_In_Person_Hearing__c">
+          <value class="variable">
+            <path element="Request_In_Person_Hearing__c"/>
+          </value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Appeal__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Appeal_Decision__c" name="Appeal_Decision__c" title="Appeal_Decision__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Appeal_Status__c" name="Appeal_Status__c" title="Appeal_Status__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Appeal_Type__c" name="Appeal_Type__c" title="Appeal_Type__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Appeal_Submitted_by__c" name="Appeal_Submitted_by__c" title="Appeal_Submitted_by__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Case_Worker__c" name="Case_Worker__c" title="Case_Worker__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Claim__c" name="Claim__c" title="Claim__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Decision_Date__c" name="Decision_Date__c" title="Decision_Date__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Reason_for_Appeal__c" name="Reason_for_Appeal__c" title="Reason_for_Appeal__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Submission_Date__c" name="Submission_Date__c" title="Submission_Date__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Hearing_Date__c" name="Hearing_Date__c" title="Hearing_Date__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Request_In_Person_Hearing__c" name="Request_In_Person_Hearing__c" title="Request_In_Person_Hearing__c"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:0800128b-e7f8-4e67-9afd-4ac801dde266" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:4fa69d48-07dd-4475-9bca-03b4118bf758" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Appeal_Decision__c" name="Appeal_Decision__c" passwordVariableAllowed="true" title="Appeal_Decision__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:45e25a1e-cfbb-4ea3-9e39-2207375aed94" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Appeal_Status__c" name="Appeal_Status__c" passwordVariableAllowed="true" title="Appeal_Status__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:798fd573-0a71-41dd-ac8b-461b3371af57" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Appeal_Type__c" name="Appeal_Type__c" passwordVariableAllowed="true" title="Appeal_Type__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:48833033-3b3c-4bd6-8a5c-ff1e6287d065" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Appeal_Submitted_by__c" name="Appeal_Submitted_by__c" passwordVariableAllowed="true" title="Appeal_Submitted_by__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:ad808134-114e-4191-882c-2dfad9255df2" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Case_Worker__c" name="Case_Worker__c" passwordVariableAllowed="true" title="Case_Worker__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:50dc446e-5f46-4dd3-832c-b2307eba64eb" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Claim__c" name="Claim__c" passwordVariableAllowed="true" title="Claim__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:91f9e860-5f73-46b0-ad3e-6476d84d0401" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Decision_Date__c" name="Decision_Date__c" passwordVariableAllowed="true" title="Decision_Date__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:0cd6a06b-4262-4225-b5d7-31364f4cf512" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Reason_for_Appeal__c" name="Reason_for_Appeal__c" passwordVariableAllowed="true" title="Reason_for_Appeal__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:146b9eed-c08f-4b49-9dcf-782cc1fed422" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Submission_Date__c" name="Submission_Date__c" passwordVariableAllowed="true" title="Submission_Date__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:3e7adaa3-1d97-4074-98e2-65562bc66883" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Hearing_Date__c" name="Hearing_Date__c" passwordVariableAllowed="true" title="Hearing_Date__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:bfc5ec1a-0c42-4d31-b151-87466a7981ef" modelBinding="sf:ui:binding:object?object=Appeal__c&amp;field=Request_In_Person_Hearing__c" name="Request_In_Person_Hearing__c" passwordVariableAllowed="true" title="Request_In_Person_Hearing__c">
+      <summary/>
+    </param>
+  </params>
+  <outputParams>
+    <param name="AppealId" passwordVariableAllowed="true" title="AppealId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="AppealId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="reuseConnectionName">
+      <value class="value" valueClass="string">Admin</value>
+    </argument>
+    <argument id="Appeal_Decision__c"/>
+    <argument id="Appeal_Status__c"/>
+    <argument id="Appeal_Type__c"/>
+    <argument id="Appeal_Submitted_by__c"/>
+    <argument id="Case_Worker__c"/>
+    <argument id="Claim__c"/>
+    <argument id="Decision_Date__c"/>
+    <argument id="Reason_for_Appeal__c"/>
+    <argument id="Submission_Date__c"/>
+    <argument id="Hearing_Date__c"/>
+    <argument id="Request_In_Person_Hearing__c"/>
+  </args>
+  <outputArgs>
+    <outputArgument id="AppointmentId">
+      <name class="value" valueClass="string">AppointmentId</name>
+    </outputArgument>
+    <outputArgument id="AppealId">
+      <name class="value" valueClass="string">AppealId</name>
+    </outputArgument>
+  </outputArgs>
+</testCase>

@@ -173,6 +173,22 @@
       <summary/>
     </param>
   </params>
+  <outputParams>
+    <param name="DeniedMedicalDocumentId" passwordVariableAllowed="true" title="DeniedMedicalDocumentId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="DeniedMedicalDocumentId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
   <args>
     <argument id="reuseConnectionName">
       <value class="value" valueClass="string">Admin</value>
@@ -194,4 +210,9 @@
     <argument id="Denied_Notes__c"/>
     <argument id="Denied_Date__c"/>
   </args>
+  <outputArgs>
+    <outputArgument id="DeniedMedicalDocumentId">
+      <name class="value" valueClass="string">DeniedMedicalDocumentId</name>
+    </outputArgument>
+  </outputArgs>
 </testCase>

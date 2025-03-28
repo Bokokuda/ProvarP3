@@ -25,7 +25,11 @@
         <argument id="closeAllPrimaryTabs">
           <value class="value" valueClass="boolean">true</value>
         </argument>
-        <argument id="reuseConnectionName"/>
+        <argument argId="631afcaa-eba8-43c1-817a-4a3a5eb4e1c4" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
         <argument id="alreadyOpenBehaviour">
           <value class="value" valueClass="string">Fail</value>
         </argument>
@@ -158,7 +162,7 @@
       <clauses>
         <clause name="substeps" testItemId="6">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="527b44ac-9cca-49a7-be9c-b0904d632a8e" name="UiDoAction" testItemId="7" title="Set the Denied Medical Document Name field to test">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="527b44ac-9cca-49a7-be9c-b0904d632a8e" name="UiDoAction" testItemId="7" title="Set the Denied Medical Document Name field to {DeniedMedicalDocumentNameValue}">
               <arguments>
                 <argument id="locator">
                   <value class="uiLocator" uri="ui:locator?name=Name&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26field%3DName"/>
@@ -166,8 +170,10 @@
                 <argument id="interaction">
                   <value class="uiInteraction" uri="ui:interaction?name=set"/>
                 </argument>
-                <argument id="value">
-                  <value class="value" valueClass="string">test</value>
+                <argument argId="f009984e-7db6-44cc-80c3-97d14dd4cc4f" id="value">
+                  <value class="variable">
+                    <path element="DeniedMedicalDocumentNameValue"/>
+                  </value>
                 </argument>
                 <argument id="blur">
                   <value class="value" valueClass="boolean">false</value>
@@ -192,23 +198,28 @@
                 </argument>
                 <argument id="locatorParams"/>
                 <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Set the Denied Medical Document Name field to test</value>
+                  <value class="value" valueClass="string">Set the Denied Medical Document Name field to {DeniedMedicalDocumentNameValue}</value>
                 </argument>
               </arguments>
               <generatedParameters>
-                <apiParam group="value" name="value" passwordVariableAllowed="true" title="Value">
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Name" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
                   <summary>The value to be populated.</summary>
                   <type>
-                    <textType/>
+                    <textType>
+                      <constraints>
+                        <valueConstraint name="maxLength">80</valueConstraint>
+                        <valueConstraint name="maxLines">1</valueConstraint>
+                      </constraints>
+                    </textType>
                   </type>
                 </apiParam>
-                <apiParam group="value" name="blur" title="Tab off field">
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
                   <summary>Whether the tab key should be pressed after the value is populated.</summary>
                   <type>
                     <booleanType/>
                   </type>
                 </apiParam>
-                <apiParam group="value" name="pressEnter" title="Press Enter">
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
                   <summary>Whether the Enter key should be pressed after the value is populated.</summary>
                   <type>
                     <booleanType/>
@@ -216,7 +227,315 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="da4a13ad-77b8-4bc2-8d9d-ffbb6c37cbcc" name="UiDoAction" testItemId="13" title="Click the Save button">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="613db4e8-f78c-43a8-8d8a-010a0207c827" name="UiDoAction" testItemId="12" title="Set the Medical History Document reference to {MedicalHistoryDocumentValue}">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Medical_History_Document__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26field%3DMedical_History_Document__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument argId="d95079f7-f926-4eea-8814-bea4bcb4e698" id="value">
+                  <value class="variable">
+                    <path element="MedicalHistoryDocumentValue"/>
+                  </value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="autoRetry">
+                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
+                </argument>
+                <argument id="locatorParams"/>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Medical History Document reference to {MedicalHistoryDocumentValue}</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Medical_History_Document__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="6da3152c-8654-4693-b072-5982afa85f3a" name="UiDoAction" testItemId="11" title="Set the Reviewing Authority reference to {ReviewingAuthorityValue}">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Reviewing_Authority__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26field%3DReviewing_Authority__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument argId="856ea905-02ce-4136-9fdf-d0e5201a2171" id="value">
+                  <value class="variable">
+                    <path element="ReviewingAuthorityValue"/>
+                  </value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="autoRetry">
+                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
+                </argument>
+                <argument id="locatorParams"/>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Reviewing Authority reference to {ReviewingAuthorityValue}</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Reviewing_Authority__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="758fb8fc-6f0f-4769-bb06-4ddab8b4fd1b" name="UiDoAction" testItemId="10" title="Set the Denied Notes field to {DeniedNotesValue}">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Denied_Notes__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26field%3DDenied_Notes__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument argId="d2c77383-a519-4a55-88c2-04162a0cb5a4" id="value">
+                  <value class="variable">
+                    <path element="DeniedNotesValue"/>
+                  </value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="autoRetry">
+                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
+                </argument>
+                <argument id="locatorParams"/>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Denied Notes field to {DeniedNotesValue}</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Denied_Notes__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="72eb8104-46a1-4292-bd36-1f08d1475825" name="UiDoAction" testItemId="9" title="Set the Denial Reason picklist to {DenialReasonValue}">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Denial_Reason__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26field%3DDenial_Reason__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument argId="e6a6b6b3-fc59-434f-9df0-f678836dfcbb" id="value">
+                  <value class="variable">
+                    <path element="DenialReasonValue"/>
+                  </value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="autoRetry">
+                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
+                </argument>
+                <argument id="locatorParams"/>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Denial Reason picklist to {DenialReasonValue}</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Denial_Reason__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <choiceType>
+                      <constraints>
+                        <valueConstraint name="boundedValues">Incomplete Information:Incomplete Information|Invalid Diagnosis:Invalid Diagnosis|Insufficient Evidence:Insufficient Evidence|Others:Others</valueConstraint>
+                      </constraints>
+                    </choiceType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="5effe564-2386-4768-9ce8-b3c99c869740" name="UiDoAction" testItemId="8" title="Set the Denied Date field to {DeniedDateValue}">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Denied_Date__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26field%3DDenied_Date__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument argId="1be0f635-d56c-4526-b9e4-d177bf4a4b95" id="value">
+                  <value class="variable">
+                    <path element="DeniedDateValue"/>
+                  </value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="autoRetry">
+                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
+                </argument>
+                <argument id="locatorParams"/>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Denied Date field to {DeniedDateValue}</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Denied_Date__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <dateTimeType>
+                      <constraints>
+                        <valueConstraint name="decimalPlaces">0</valueConstraint>
+                      </constraints>
+                    </dateTimeType>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="4d711810-e48a-40b1-b4f7-60cee8aa0954" name="UiDoAction" testItemId="14" title="Click the Save button">
               <arguments>
                 <argument id="locator">
                   <value class="uiLocator" uri="ui:locator?name=save&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26action%3Dsave"/>
@@ -270,304 +589,6 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="613db4e8-f78c-43a8-8d8a-010a0207c827" name="UiDoAction" testItemId="12" title="Set the Medical History Document reference to asdfdsa">
-              <arguments>
-                <argument id="locator">
-                  <value class="uiLocator" uri="ui:locator?name=Medical_History_Document__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26field%3DMedical_History_Document__c"/>
-                </argument>
-                <argument id="interaction">
-                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
-                </argument>
-                <argument id="value">
-                  <value class="value" valueClass="string">asdfdsa</value>
-                </argument>
-                <argument id="blur">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="pressEnter">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="captureBefore">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="captureAfter">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="beforeWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="afterWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="autoRetry">
-                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
-                </argument>
-                <argument id="locatorParams"/>
-                <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Set the Medical History Document reference to asdfdsa</value>
-                </argument>
-              </arguments>
-              <generatedParameters>
-                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Medical_History_Document__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
-                  <summary>The value to be populated.</summary>
-                  <type>
-                    <textType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
-                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
-                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-              </generatedParameters>
-            </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="6da3152c-8654-4693-b072-5982afa85f3a" name="UiDoAction" testItemId="11" title="Set the Reviewing Authority reference to sdfae">
-              <arguments>
-                <argument id="locator">
-                  <value class="uiLocator" uri="ui:locator?name=Reviewing_Authority__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26field%3DReviewing_Authority__c"/>
-                </argument>
-                <argument id="interaction">
-                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
-                </argument>
-                <argument id="value">
-                  <value class="value" valueClass="string">sdfae</value>
-                </argument>
-                <argument id="blur">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="pressEnter">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="captureBefore">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="captureAfter">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="beforeWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="afterWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="autoRetry">
-                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
-                </argument>
-                <argument id="locatorParams"/>
-                <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Set the Reviewing Authority reference to sdfae</value>
-                </argument>
-              </arguments>
-              <generatedParameters>
-                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Reviewing_Authority__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
-                  <summary>The value to be populated.</summary>
-                  <type>
-                    <textType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
-                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
-                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-              </generatedParameters>
-            </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="758fb8fc-6f0f-4769-bb06-4ddab8b4fd1b" name="UiDoAction" testItemId="10" title="Set the Denied Notes field to test">
-              <arguments>
-                <argument id="locator">
-                  <value class="uiLocator" uri="ui:locator?name=Denied_Notes__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26field%3DDenied_Notes__c"/>
-                </argument>
-                <argument id="interaction">
-                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
-                </argument>
-                <argument id="value">
-                  <value class="value" valueClass="string">test</value>
-                </argument>
-                <argument id="blur">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="pressEnter">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="captureBefore">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="captureAfter">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="beforeWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="afterWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="autoRetry">
-                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
-                </argument>
-                <argument id="locatorParams"/>
-                <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Set the Denied Notes field to test</value>
-                </argument>
-              </arguments>
-              <generatedParameters>
-                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Denied_Notes__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
-                  <summary>The value to be populated.</summary>
-                  <type>
-                    <textType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
-                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
-                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-              </generatedParameters>
-            </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="72eb8104-46a1-4292-bd36-1f08d1475825" name="UiDoAction" testItemId="9" title="Set the Denial Reason picklist to Incomplete Information">
-              <arguments>
-                <argument id="locator">
-                  <value class="uiLocator" uri="ui:locator?name=Denial_Reason__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26field%3DDenial_Reason__c"/>
-                </argument>
-                <argument id="interaction">
-                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
-                </argument>
-                <argument id="value">
-                  <value class="value" valueClass="string">Incomplete Information</value>
-                </argument>
-                <argument id="blur">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="pressEnter">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="captureBefore">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="captureAfter">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="beforeWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="afterWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="autoRetry">
-                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
-                </argument>
-                <argument id="locatorParams"/>
-                <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Set the Denial Reason picklist to Incomplete Information</value>
-                </argument>
-              </arguments>
-              <generatedParameters>
-                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Denial_Reason__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
-                  <summary>The value to be populated.</summary>
-                  <type>
-                    <choiceType>
-                      <constraints>
-                        <valueConstraint name="boundedValues">Incomplete Information:Incomplete Information|Invalid Diagnosis:Invalid Diagnosis|Insufficient Evidence:Insufficient Evidence|Others:Others</valueConstraint>
-                      </constraints>
-                    </choiceType>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
-                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
-                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-              </generatedParameters>
-            </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="5effe564-2386-4768-9ce8-b3c99c869740" name="UiDoAction" testItemId="8" title="Set the Denied Date field to 2025-03-26 12:00:00">
-              <arguments>
-                <argument id="locator">
-                  <value class="uiLocator" uri="ui:locator?name=Denied_Date__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DDenied_Medical_Document__c%26field%3DDenied_Date__c"/>
-                </argument>
-                <argument id="interaction">
-                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
-                </argument>
-                <argument id="value">
-                  <value class="value" valueClass="dateTime">1742990400000</value>
-                </argument>
-                <argument id="blur">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="pressEnter">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="captureBefore">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="captureAfter">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="beforeWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="afterWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="autoRetry">
-                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
-                </argument>
-                <argument id="locatorParams"/>
-                <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Set the Denied Date field to 2025-03-26 12:00:00</value>
-                </argument>
-              </arguments>
-              <generatedParameters>
-                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Denied_Date__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
-                  <summary>The value to be populated.</summary>
-                  <type>
-                    <dateTimeType>
-                      <constraints>
-                        <valueConstraint name="decimalPlaces">0</valueConstraint>
-                      </constraints>
-                    </dateTimeType>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
-                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
-                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-              </generatedParameters>
-            </apiCall>
           </steps>
         </clause>
       </clauses>
@@ -594,4 +615,111 @@
       </generatedParameters>
     </apiCall>
   </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:f009984e-7db6-44cc-80c3-97d14dd4cc4f" name="DeniedMedicalDocumentNameValue" passwordVariableAllowed="true" title="DeniedMedicalDocumentNameValue">
+      <summary>The value to be populated.</summary>
+      <type>
+        <textType/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:d95079f7-f926-4eea-8814-bea4bcb4e698" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Medical_History_Document__c" name="MedicalHistoryDocumentValue" passwordVariableAllowed="true" title="MedicalHistoryDocumentValue">
+      <summary>The value to be populated.</summary>
+      <type>
+        <textType/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:856ea905-02ce-4136-9fdf-d0e5201a2171" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Reviewing_Authority__c" name="ReviewingAuthorityValue" passwordVariableAllowed="true" title="ReviewingAuthorityValue">
+      <summary>The value to be populated.</summary>
+      <type>
+        <textType/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:d2c77383-a519-4a55-88c2-04162a0cb5a4" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Denied_Notes__c" name="DeniedNotesValue" passwordVariableAllowed="true" title="DeniedNotesValue">
+      <summary>The value to be populated.</summary>
+      <type>
+        <textType/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:e6a6b6b3-fc59-434f-9df0-f678836dfcbb" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Denial_Reason__c" name="DenialReasonValue" passwordVariableAllowed="true" title="DenialReasonValue">
+      <summary>The value to be populated.</summary>
+      <type>
+        <choiceType>
+          <constraints>
+            <valueConstraint name="boundedValues">Incomplete Information:Incomplete Information|Invalid Diagnosis:Invalid Diagnosis|Insufficient Evidence:Insufficient Evidence|Others:Others</valueConstraint>
+          </constraints>
+        </choiceType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:1be0f635-d56c-4526-b9e4-d177bf4a4b95" modelBinding="sf:ui:binding:object?object=Denied_Medical_Document__c&amp;field=Denied_Date__c" name="DeniedDateValue" passwordVariableAllowed="true" title="DeniedDateValue">
+      <summary>The value to be populated.</summary>
+      <type>
+        <dateTimeType>
+          <constraints>
+            <valueConstraint name="decimalPlaces">0</valueConstraint>
+          </constraints>
+        </dateTimeType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:631afcaa-eba8-43c1-817a-4a3a5eb4e1c4" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+  </params>
+  <outputParams>
+    <param name="denied_Medical_Document__cId" passwordVariableAllowed="true" title="denied_Medical_Document__cId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="denied_Medical_Document__cId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="DeniedMedicalDocumentNameValue">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="MedicalHistoryDocumentValue"/>
+    <argument id="ReviewingAuthorityValue"/>
+    <argument id="DeniedNotesValue">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="DenialReasonValue">
+      <value class="value" valueClass="string">Incomplete Information</value>
+    </argument>
+    <argument id="DeniedDateValue">
+      <value class="variable">
+        <path element="NOW"/>
+      </value>
+    </argument>
+    <argument id="reuseConnectionName">
+      <value class="value" valueClass="string">Admin</value>
+    </argument>
+  </args>
+  <outputArgs>
+    <outputArgument id="denied_Medical_Document__cId">
+      <name class="value" valueClass="string">denied_Medical_Document__cId</name>
+    </outputArgument>
+  </outputArgs>
 </testCase>

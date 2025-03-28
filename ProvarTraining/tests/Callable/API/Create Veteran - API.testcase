@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="0f634aed-52bf-4b36-8d3c-7330c27a4ded" id="20" visibility="Internal">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="58afe043-7f76-4a8d-bf4a-91c480329aa4" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">8ed1ef49-514a-49c5-b92f-a3bdb1cc532e</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Veteran_Management</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument argId="0800128b-e7f8-4e67-9afd-4ac801dde266" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="12cd74aa-ddd9-4faf-81af-767f5e9fe7f0" name="ApexSoqlQuery" testItemId="5" title="SOQL Query: select Id from User where LastName = {Last_Name__c} and FirstName = {First_Name__c} limit 1=&gt;UserRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Id from User where LastName = </value>
+              <variable>
+                <path element="Last_Name__c"/>
+              </variable>
+              <value valueClass="string"> and FirstName = </value>
+              <variable>
+                <path element="First_Name__c"/>
+              </variable>
+              <value valueClass="string"> limit 1</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">UserRows</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" guid="abce51cc-18d8-4fa7-8786-236ed3a29554" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="4" title="Create Object: Veteran__c=&gt;VeteranId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Veteran__c</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">VeteranId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument argId="7b212f4d-5cf1-4d29-9657-41ee989794e8" id="Discharge_Status__c">
+          <value class="variable">
+            <path element="Discharge_Status__c"/>
+          </value>
+        </argument>
+        <argument argId="68a093cc-cea3-4b58-93b0-6c1df26e4d28" id="Military_Branch__c">
+          <value class="variable">
+            <path element="Military_Branch__c"/>
+          </value>
+        </argument>
+        <argument argId="43555e7a-4c06-4b67-b234-035de11986e5" id="Date_of_Birth__c">
+          <value class="variable">
+            <path element="Date_of_Birth__c"/>
+          </value>
+        </argument>
+        <argument argId="7a9151f8-36d9-4f3a-9854-2990dfb3af0f" id="Email__c">
+          <value class="variable">
+            <path element="Email__c"/>
+          </value>
+        </argument>
+        <argument argId="88392629-3fb2-49b5-9354-43b5333c3619" id="First_Name__c">
+          <value class="variable">
+            <path element="First_Name__c"/>
+          </value>
+        </argument>
+        <argument argId="aeaedcaf-43aa-4a7e-b005-292e8349f764" id="Last_Name__c">
+          <value class="variable">
+            <path element="Last_Name__c"/>
+          </value>
+        </argument>
+        <argument argId="3e9e5943-b1b1-4dfd-aca0-a2fc78d64a62" id="Military_Service_End_Date__c">
+          <value class="variable">
+            <path element="Military_Service_End_Date__c"/>
+          </value>
+        </argument>
+        <argument argId="ef6731e5-91ad-49da-972f-fcb0535338bf" id="Military_Service_Start_Date__c">
+          <value class="variable">
+            <path element="Military_Service_Start_Date__c"/>
+          </value>
+        </argument>
+        <argument argId="8266ddb6-4cea-43c7-91ed-5a0655e2af48" id="Primary_Phone_Number__c">
+          <value class="variable">
+            <path element="Primary_Phone_Number__c"/>
+          </value>
+        </argument>
+        <argument argId="9e95a2a1-0c64-433e-941a-499c5d5096f2" id="Social_Security_Number__c">
+          <value class="variable">
+            <path element="Social_Security_Number__c"/>
+          </value>
+        </argument>
+        <argument argId="a407cfbe-6216-453e-bbfc-04a3680fa8e6" id="Credit_Score__c">
+          <value class="variable">
+            <path element="Credit_Score__c"/>
+          </value>
+        </argument>
+        <argument argId="d0b8760e-786a-4de6-906f-50496233e6c2" id="Disability_Percentage__c">
+          <value class="variable">
+            <path element="Disability_Percentage__c"/>
+          </value>
+        </argument>
+        <argument id="Veteran_User__c">
+          <value class="variable">
+            <path element="UserRows"/>
+            <path element="Id"/>
+          </value>
+        </argument>
+      </arguments>
+      <resultAssertions>
+        <resultAssertion/>
+      </resultAssertions>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Veteran__c</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Discharge_Status__c" name="Discharge_Status__c" title="Discharge_Status__c">
+          <summary>Please choose the discharge type you received upon leaving service</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Military_Branch__c" name="Military_Branch__c" title="Military_Branch__c">
+          <summary>Please choose the branch you have served in</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Date_of_Birth__c" name="Date_of_Birth__c" title="Date_of_Birth__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Email__c" name="Email__c" title="Email__c">
+          <summary>Please enter your email</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=First_Name__c" name="First_Name__c" title="First_Name__c">
+          <summary>Please enter your first name</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Last_Name__c" name="Last_Name__c" title="Last_Name__c">
+          <summary>Please enter your last name</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Military_Service_End_Date__c" name="Military_Service_End_Date__c" title="Military_Service_End_Date__c">
+          <summary>Please choose the date that your military service ended</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Military_Service_Start_Date__c" name="Military_Service_Start_Date__c" title="Military_Service_Start_Date__c">
+          <summary>Please enter the date your military service started</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Primary_Phone_Number__c" name="Primary_Phone_Number__c" title="Primary_Phone_Number__c">
+          <summary>Please enter your primary phone number</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Social_Security_Number__c" name="Social_Security_Number__c" title="Social_Security_Number__c">
+          <summary>Please enter your social security number</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Credit_Score__c" name="Credit_Score__c" title="Credit_Score__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Disability_Percentage__c" name="Disability_Percentage__c" title="Disability_Percentage__c">
+          <summary>If you currently receive disability please enter the percentage</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Veteran_User__c" name="Veteran_User__c" title="Veteran_User__c"/>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:0800128b-e7f8-4e67-9afd-4ac801dde266" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:7b212f4d-5cf1-4d29-9657-41ee989794e8" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Discharge_Status__c" name="Discharge_Status__c" passwordVariableAllowed="true" title="Discharge_Status__c">
+      <summary>Please choose the discharge type you received upon leaving service</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:68a093cc-cea3-4b58-93b0-6c1df26e4d28" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Military_Branch__c" name="Military_Branch__c" passwordVariableAllowed="true" title="Military_Branch__c">
+      <summary>Please choose the branch you have served in</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:43555e7a-4c06-4b67-b234-035de11986e5" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Date_of_Birth__c" name="Date_of_Birth__c" passwordVariableAllowed="true" title="Date_of_Birth__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:7a9151f8-36d9-4f3a-9854-2990dfb3af0f" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Email__c" name="Email__c" passwordVariableAllowed="true" title="Email__c">
+      <summary>Please enter your email</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:88392629-3fb2-49b5-9354-43b5333c3619" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=First_Name__c" name="First_Name__c" passwordVariableAllowed="true" title="First_Name__c">
+      <summary>Please enter your first name</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:aeaedcaf-43aa-4a7e-b005-292e8349f764" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Last_Name__c" name="Last_Name__c" passwordVariableAllowed="true" title="Last_Name__c">
+      <summary>Please enter your last name</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:3e9e5943-b1b1-4dfd-aca0-a2fc78d64a62" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Military_Service_End_Date__c" name="Military_Service_End_Date__c" passwordVariableAllowed="true" title="Military_Service_End_Date__c">
+      <summary>Please choose the date that your military service ended</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:ef6731e5-91ad-49da-972f-fcb0535338bf" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Military_Service_Start_Date__c" name="Military_Service_Start_Date__c" passwordVariableAllowed="true" title="Military_Service_Start_Date__c">
+      <summary>Please enter the date your military service started</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:8266ddb6-4cea-43c7-91ed-5a0655e2af48" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Primary_Phone_Number__c" name="Primary_Phone_Number__c" passwordVariableAllowed="true" title="Primary_Phone_Number__c">
+      <summary>Please enter your primary phone number</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:9e95a2a1-0c64-433e-941a-499c5d5096f2" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Social_Security_Number__c" name="Social_Security_Number__c" passwordVariableAllowed="true" title="Social_Security_Number__c">
+      <summary>Please enter your social security number</summary>
+    </param>
+    <param linkedToUrl="provar:hasvalue:a407cfbe-6216-453e-bbfc-04a3680fa8e6" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Credit_Score__c" name="Credit_Score__c" passwordVariableAllowed="true" title="Credit_Score__c">
+      <summary/>
+    </param>
+    <param linkedToUrl="provar:hasvalue:d0b8760e-786a-4de6-906f-50496233e6c2" modelBinding="sf:ui:binding:object?object=Veteran__c&amp;field=Disability_Percentage__c" name="Disability_Percentage__c" passwordVariableAllowed="true" title="Disability_Percentage__c">
+      <summary>If you currently receive disability please enter the percentage</summary>
+    </param>
+  </params>
+  <outputParams>
+    <param name="VeteranId" passwordVariableAllowed="true" title="VeteranId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="VeteranId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="reuseConnectionName">
+      <value class="value" valueClass="string">Admin</value>
+    </argument>
+    <argument id="Discharge_Status__c">
+      <value class="value" valueClass="string">General</value>
+    </argument>
+    <argument id="Military_Branch__c">
+      <value class="value" valueClass="string">Army</value>
+    </argument>
+    <argument id="Date_of_Birth__c">
+      <value class="funcCall" id="DateAdd">
+        <argument id="date">
+          <value class="variable">
+            <path element="TODAY"/>
+          </value>
+        </argument>
+        <argument id="amount">
+          <value class="value" valueClass="string">-50</value>
+        </argument>
+        <argument id="unit">
+          <value class="variable">
+            <path element="YEARS"/>
+          </value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Email__c">
+      <value class="compound">
+        <parts>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">10</value>
+            </argument>
+          </funcCall>
+          <value valueClass="string">@</value>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">10</value>
+            </argument>
+            <argument id="format">
+              <value class="variable">
+                <path element="ALPHA"/>
+              </value>
+            </argument>
+          </funcCall>
+          <value valueClass="string">.</value>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">3</value>
+            </argument>
+            <argument id="format">
+              <value class="variable">
+                <path element="ALPHA"/>
+              </value>
+            </argument>
+          </funcCall>
+        </parts>
+      </value>
+    </argument>
+    <argument id="First_Name__c">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+        <argument id="format">
+          <value class="variable">
+            <path element="ALPHA"/>
+          </value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Last_Name__c">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+        <argument id="format">
+          <value class="variable">
+            <path element="ALPHA"/>
+          </value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Military_Service_End_Date__c">
+      <value class="funcCall" id="DateAdd">
+        <argument id="date">
+          <value class="variable">
+            <path element="TODAY"/>
+          </value>
+        </argument>
+        <argument id="amount">
+          <value class="value" valueClass="decimal">0</value>
+        </argument>
+        <argument id="unit">
+          <value class="variable">
+            <path element="DAYS"/>
+          </value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Military_Service_Start_Date__c">
+      <value class="funcCall" id="DateAdd">
+        <argument id="date">
+          <value class="variable">
+            <path element="TODAY"/>
+          </value>
+        </argument>
+        <argument id="amount">
+          <value class="value" valueClass="string">-25</value>
+        </argument>
+        <argument id="unit">
+          <value class="variable">
+            <path element="YEARS"/>
+          </value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Primary_Phone_Number__c">
+      <value class="compound">
+        <parts>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">3</value>
+            </argument>
+            <argument id="format">
+              <value class="variable">
+                <path element="NUMERIC"/>
+              </value>
+            </argument>
+          </funcCall>
+          <value valueClass="string">-</value>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">3</value>
+            </argument>
+            <argument id="format">
+              <value class="variable">
+                <path element="NUMERIC"/>
+              </value>
+            </argument>
+          </funcCall>
+          <value valueClass="string">-</value>
+          <funcCall id="UniqueId">
+            <argument id="length">
+              <value class="value" valueClass="decimal">4</value>
+            </argument>
+            <argument id="format">
+              <value class="variable">
+                <path element="NUMERIC"/>
+              </value>
+            </argument>
+          </funcCall>
+        </parts>
+      </value>
+    </argument>
+    <argument id="Social_Security_Number__c">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">9</value>
+        </argument>
+        <argument id="format">
+          <value class="variable">
+            <path element="NUMERIC"/>
+          </value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Credit_Score__c">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">3</value>
+        </argument>
+        <argument id="format">
+          <value class="variable">
+            <path element="NUMERIC"/>
+          </value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="Disability_Percentage__c"/>
+  </args>
+  <outputArgs>
+    <outputArgument id="AppointmentId">
+      <name class="value" valueClass="string">AppointmentId</name>
+    </outputArgument>
+    <outputArgument id="VeteranId">
+      <name class="value" valueClass="string">VeteranId</name>
+    </outputArgument>
+  </outputArgs>
+</testCase>

@@ -178,6 +178,22 @@
       </type>
     </param>
   </params>
+  <outputParams>
+    <param name="MedicalHistoryId" passwordVariableAllowed="true" title="MedicalHistoryId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="MedicalHistoryId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
   <args>
     <argument id="Name">
       <value class="funcCall" id="UniqueId">
@@ -192,4 +208,9 @@
       <value class="value" valueClass="string">Admin</value>
     </argument>
   </args>
+  <outputArgs>
+    <outputArgument id="MedicalHistoryId">
+      <name class="value" valueClass="string">MedicalHistoryId</name>
+    </outputArgument>
+  </outputArgs>
 </testCase>

@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="8366b908-6ae2-4d13-ac94-61e48d7605b7" id="11">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="b4dfb62b-ba5f-4ea7-b3a5-fdc6ff382072" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">8ed1ef49-514a-49c5-b92f-a3bdb1cc532e</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Veteran_Management</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="cleanupConnectionName">
+          <value class="value"/>
+        </argument>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexSoqlQuery" guid="cd4be302-69ab-43c5-a433-a8d48bbb74e2" name="ApexSoqlQuery" testItemId="39" title="SOQL Query: select Id from Veteran__c where Name = '{VetName}' limit 1=&gt;VeteranRows">
+      <arguments>
+        <argument id="soqlQuery">
+          <value class="compound">
+            <parts>
+              <value valueClass="string">select Id from Veteran__c where Name = '</value>
+              <variable>
+                <path element="VetName"/>
+              </variable>
+              <value valueClass="string">' limit 1</value>
+            </parts>
+          </value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultListName">
+          <value class="value" valueClass="string">VeteranRows</value>
+        </argument>
+        <argument id="soqlColumnAliases">
+          <value class="valueList" mutable="Mutable"/>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" guid="99579cf0-7ffa-47ee-8176-6281791c65ca" name="StepGroup" testItemId="6" title="Read Doctor Excel and Set values">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Read Doctor Excel and Set values</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="doctorRows" variableScope="Test">
+          <cacheToken>C:/Users/Chilly/ProvarP3/ProvarTraining/templates/All Objects2.xlsx;1743124971805</cacheToken>
+          <cachedParameters>
+            <apiParam name="CreatedById"/>
+            <apiParam name="CreatedDate"/>
+            <apiParam name="CurrencyIsoCode"/>
+            <apiParam name="Doctors_User__c"/>
+            <apiParam name="Id"/>
+            <apiParam name="IsDeleted"/>
+            <apiParam name="LastModifiedById"/>
+            <apiParam name="LastModifiedDate"/>
+            <apiParam name="LastReferencedDate"/>
+            <apiParam name="LastViewedDate"/>
+            <apiParam name="Location__Latitude__s"/>
+            <apiParam name="Location__Longitude__s"/>
+            <apiParam name="Location__c"/>
+            <apiParam name="Name"/>
+            <apiParam name="First_Name__c"/>
+            <apiParam name="Last_Name__c"/>
+            <apiParam name="Phone_Number__c"/>
+            <apiParam name="Email__c"/>
+            <apiParam name="Office_Name__c"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">templates/All Objects2.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Doctor__c</worksheetName>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+      <clauses>
+        <clause name="hidden" testItemId="3"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" guid="a7c80f8b-aac6-4be0-bb3e-a92e4e36b6f9" name="ForEach" testItemId="7" title="For Each: {doctorRows}=&gt;doctorRow">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="doctorRows"/>
+          </value>
+        </argument>
+        <argument id="fromItem">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="valueName">
+          <value class="value" valueClass="string">doctorRow</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="5">
+          <steps>
+            <caseCall guid="ca9303e4-61ee-4f29-80f6-3991e598f7cc" testCaseId="e6ad1c63-06fc-47a5-b542-234167bd78c0" testCasePath="tests/Callable/UI/Create Doctor - UI.testcase" testItemId="10">
+              <arguments>
+                <argument id="DoctorNameValue">
+                  <value class="variable">
+                    <path element="doctorRow"/>
+                    <path element="Name"/>
+                  </value>
+                </argument>
+                <argument id="LatitudeValue">
+                  <value class="variable">
+                    <path element="doctorRow"/>
+                    <path element="Location__Latitude__s"/>
+                  </value>
+                </argument>
+                <argument id="LongitudeValue">
+                  <value class="variable">
+                    <path element="doctorRow"/>
+                    <path element="Location__Longitude__s"/>
+                  </value>
+                </argument>
+                <argument id="FirstNameValue">
+                  <value class="variable">
+                    <path element="doctorRow"/>
+                    <path element="First_Name__c"/>
+                  </value>
+                </argument>
+                <argument id="OfficeNameValue">
+                  <value class="variable">
+                    <path element="doctorRow"/>
+                    <path element="Office_Name__c"/>
+                  </value>
+                </argument>
+                <argument id="LastNameValue">
+                  <value class="variable">
+                    <path element="doctorRow"/>
+                    <path element="Last_Name__c"/>
+                  </value>
+                </argument>
+                <argument id="PhoneNumberValue">
+                  <value class="variable">
+                    <path element="doctorRow"/>
+                    <path element="Phone_Number__c"/>
+                  </value>
+                </argument>
+                <argument id="EmailValue">
+                  <value class="variable">
+                    <path element="doctorRow"/>
+                    <path element="Email__c"/>
+                  </value>
+                </argument>
+                <argument id="OfficeOpeningHoursValue">
+                  <value class="value" valueClass="string">8:00 AM</value>
+                </argument>
+                <argument id="OfficeClosingHoursValue">
+                  <value class="value" valueClass="string">5:00 PM</value>
+                </argument>
+              </arguments>
+              <outputArguments>
+                <outputArgument id="doctor__cId">
+                  <name class="variable">
+                    <path element="doctorRow"/>
+                    <path element="Name"/>
+                  </name>
+                </outputArgument>
+              </outputArguments>
+            </caseCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" guid="d333630e-bde9-4c3e-b930-765eba39b59c" name="StepGroup" testItemId="11" title="Read Medical History Excel and Set values">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Read Medical History Excel and Set values</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="MedicalHistoryRows" variableScope="Test">
+          <cacheToken>C:/Users/Chilly/ProvarP3/ProvarTraining/templates/All Objects2.xlsx;1743133225891</cacheToken>
+          <cachedParameters>
+            <apiParam name="CreatedById"/>
+            <apiParam name="CreatedDate"/>
+            <apiParam name="CurrencyIsoCode"/>
+            <apiParam name="Id"/>
+            <apiParam name="IsDeleted"/>
+            <apiParam name="LastActivityDate"/>
+            <apiParam name="LastModifiedById"/>
+            <apiParam name="LastModifiedDate"/>
+            <apiParam name="LastReferencedDate"/>
+            <apiParam name="LastViewedDate"/>
+            <apiParam name="Name"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">templates/All Objects2.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Medical_History__c</worksheetName>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+      <clauses>
+        <clause name="hidden" testItemId="12"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" guid="de5d522a-deff-41f0-9af2-c98fc03dd8c5" name="ForEach" testItemId="13" title="For Each: {MedicalHistoryRows}=&gt;MedicalHistoryRow">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="MedicalHistoryRows"/>
+          </value>
+        </argument>
+        <argument id="fromItem">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="valueName">
+          <value class="value" valueClass="string">MedicalHistoryRow</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="14">
+          <steps>
+            <caseCall guid="3ce5e209-6b9e-4912-a006-9fa437551075" testCaseId="cc2960c5-b82f-418b-ba19-a7348e15ca8a" testCasePath="tests/Callable/UI/Create Medical History - UI.testcase" testItemId="19">
+              <arguments>
+                <argument id="MedicalHistoryNameValue">
+                  <value class="variable">
+                    <path element="MedicalHistoryRow"/>
+                    <path element="Name"/>
+                  </value>
+                </argument>
+                <argument id="PrimaryCareDoctorValue">
+                  <value class="variable">
+                    <path element="doctorRow"/>
+                    <path element="Name"/>
+                  </value>
+                </argument>
+                <argument id="RelatedVeteranValue">
+                  <value class="variable">
+                    <path element="VetName"/>
+                  </value>
+                </argument>
+                <argument id="reuseConnectionName">
+                  <value class="value" valueClass="string">Admin</value>
+                </argument>
+              </arguments>
+              <outputArguments>
+                <outputArgument id="medical_History__cId">
+                  <name class="value" valueClass="string">medical_History__cId</name>
+                </outputArgument>
+              </outputArguments>
+            </caseCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" guid="8775203f-90e7-4e6f-90dd-9760fd71e93d" name="StepGroup" testItemId="15" title="Read Medical History Document Excel and Set values">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Read Medical History Document Excel and Set values</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="MedicalHistoryDocumentRows" variableScope="Test">
+          <cacheToken>C:/Users/Chilly/ProvarP3/ProvarTraining/templates/All Objects2.xlsx;1743134709716</cacheToken>
+          <cachedParameters>
+            <apiParam name="CreatedById"/>
+            <apiParam name="CreatedDate"/>
+            <apiParam name="CurrencyIsoCode"/>
+            <apiParam name="Id"/>
+            <apiParam name="IsDeleted"/>
+            <apiParam name="LastModifiedById"/>
+            <apiParam name="LastModifiedDate"/>
+            <apiParam name="LastReferencedDate"/>
+            <apiParam name="LastViewedDate"/>
+            <apiParam name="Name"/>
+            <apiParam name="Related_Medical_History__c"/>
+            <apiParam name="SystemModstamp"/>
+            <apiParam name="Uploaded_By__c"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">templates/All Objects2.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Medical_History_Document__c</worksheetName>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+      <clauses>
+        <clause name="hidden" testItemId="16"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" guid="4823c0a1-ebbe-4bfe-8677-838c4fb425e4" name="ForEach" testItemId="17" title="For Each: {MedicalHistoryDocumentRows}=&gt;MedicalHistoryDocumentRow">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="MedicalHistoryDocumentRows"/>
+          </value>
+        </argument>
+        <argument id="fromItem">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="valueName">
+          <value class="value" valueClass="string">MedicalHistoryDocumentRow</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="18">
+          <steps>
+            <caseCall guid="d60141aa-ddd8-4360-a063-94a51150b96d" testCaseId="ac411231-e941-4078-9ce6-db289bc88af9" testCasePath="tests/Callable/UI/Create Medical History Document - UI.testcase" testItemId="21">
+              <arguments>
+                <argument id="MedicalHistoryDocumentNameValue">
+                  <value class="variable">
+                    <path element="MedicalHistoryDocumentRow"/>
+                    <path element="Name"/>
+                  </value>
+                </argument>
+                <argument id="RelatedMedicalHistoryValue">
+                  <value class="variable">
+                    <path element="MedicalHistoryRow"/>
+                    <path element="Name"/>
+                  </value>
+                </argument>
+                <argument id="UploadedByValue"/>
+                <argument id="reuseConnectionName">
+                  <value class="value" valueClass="string">Admin</value>
+                </argument>
+              </arguments>
+              <outputArguments>
+                <outputArgument id="medical_History_Document__cId">
+                  <name class="variable">
+                    <path element="MedicalHistoryDocumentRow"/>
+                    <path element="Name"/>
+                  </name>
+                </outputArgument>
+              </outputArguments>
+            </caseCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" guid="a80f96d2-7441-42c0-a818-31c11a0798a9" name="StepGroup" testItemId="22" title="Read Approved Medical Document Excel and Set values\n">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Read Approved Medical Document Excel and Set values\n</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="ApprovedMedicalDocumentRows" variableScope="Test">
+          <cacheToken>C:/Users/Chilly/ProvarP3/ProvarTraining/templates/All Objects2.xlsx;1743130169148</cacheToken>
+          <cachedParameters>
+            <apiParam name="Approval_Notes__c"/>
+            <apiParam name="Approved_Date__c"/>
+            <apiParam name="Approving_Authority__c"/>
+            <apiParam name="CreatedById"/>
+            <apiParam name="CreatedDate"/>
+            <apiParam name="CurrencyIsoCode"/>
+            <apiParam name="Id"/>
+            <apiParam name="IsDeleted"/>
+            <apiParam name="LastActivityDate"/>
+            <apiParam name="LastModifiedById"/>
+            <apiParam name="LastModifiedDate"/>
+            <apiParam name="LastReferencedDate"/>
+            <apiParam name="LastViewedDate"/>
+            <apiParam name="Medical_History_Document__c"/>
+            <apiParam name="Name"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">templates/All Objects2.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Approved_Medical_Document__c</worksheetName>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+      <clauses>
+        <clause name="hidden" testItemId="23"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" guid="9ca27998-ae5b-49b7-af1c-2936e4ab814c" name="ForEach" testItemId="28" title="For Each: {ApprovedMedicalDocumentRows}=&gt;ApprovedMedicalDocumentRow">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="ApprovedMedicalDocumentRows"/>
+          </value>
+        </argument>
+        <argument id="fromItem">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="valueName">
+          <value class="value" valueClass="string">ApprovedMedicalDocumentRow</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="29">
+          <steps>
+            <caseCall guid="cbac85e4-2418-4a9e-86c9-0258329af29a" testCaseId="1653639b-abe3-4b5f-8af1-777b598add81" testCasePath="tests/Callable/UI/Create Approved Medical Document - UI.testcase" testItemId="35">
+              <arguments>
+                <argument id="ApprovedMedicalDocumentNameValue">
+                  <value class="variable">
+                    <path element="ApprovedMedicalDocumentRow"/>
+                    <path element="Name"/>
+                  </value>
+                </argument>
+                <argument id="MedicalHistoryDocumentValue">
+                  <value class="variable">
+                    <path element="medical_History_Document__cId"/>
+                  </value>
+                </argument>
+                <argument id="ApprovingAuthorityValue"/>
+                <argument id="ApprovedNotesValue">
+                  <value class="variable">
+                    <path element="ApprovedMedicalDocumentRow"/>
+                    <path element="Approval_Notes__c"/>
+                  </value>
+                </argument>
+                <argument id="ApprovedDateValue">
+                  <value class="variable">
+                    <path element="ApprovedMedicalDocumentRow"/>
+                    <path element="Approved_Date__c"/>
+                  </value>
+                </argument>
+                <argument id="reuseConnectionName">
+                  <value class="value" valueClass="string">Admin</value>
+                </argument>
+              </arguments>
+            </caseCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" guid="128e51d2-974c-46ae-ac8a-444246064a64" name="StepGroup" testItemId="24" title="Read Denied Medical Document Excel and Set values\n">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Read Denied Medical Document Excel and Set values\n</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="DeniedMedicalDocumentRows" variableScope="Test">
+          <cacheToken>C:/Users/Chilly/ProvarP3/ProvarTraining/templates/All Objects2.xlsx;1743131519180</cacheToken>
+          <cachedParameters>
+            <apiParam name="CreatedById"/>
+            <apiParam name="CreatedDate"/>
+            <apiParam name="CurrencyIsoCode"/>
+            <apiParam name="Denial_Reason__c"/>
+            <apiParam name="Denied_Date__c"/>
+            <apiParam name="Denied_Notes__c"/>
+            <apiParam name="Id"/>
+            <apiParam name="IsDeleted"/>
+            <apiParam name="LastActivityDate"/>
+            <apiParam name="LastModifiedById"/>
+            <apiParam name="LastModifiedDate"/>
+            <apiParam name="LastReferencedDate"/>
+            <apiParam name="LastViewedDate"/>
+            <apiParam name="Medical_History_Document__c"/>
+            <apiParam name="Name"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">templates/All Objects2.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Denied_Medical_Document__c</worksheetName>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+      <clauses>
+        <clause name="hidden" testItemId="25"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" guid="0a0fc6e4-65b9-4d20-ae98-60566a8fba44" name="ForEach" testItemId="30" title="For Each: {DeniedMedicalDocumentRows}=&gt;DeniedMedicalDocumentRow">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="DeniedMedicalDocumentRows"/>
+          </value>
+        </argument>
+        <argument id="fromItem">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="valueName">
+          <value class="value" valueClass="string">DeniedMedicalDocumentRow</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="31">
+          <steps>
+            <caseCall guid="be25d4fa-d447-4023-b137-caa8da2ce218" testCaseId="c05191fa-a2d3-4d55-bfa7-51c86ff8d43e" testCasePath="tests/Callable/UI/Create Denied Medical Document - UI.testcase" testItemId="34">
+              <arguments>
+                <argument id="DeniedMedicalDocumentNameValue">
+                  <value class="variable">
+                    <path element="DeniedMedicalDocumentRow"/>
+                    <path element="Name"/>
+                  </value>
+                </argument>
+                <argument id="MedicalHistoryDocumentValue">
+                  <value class="variable">
+                    <path element="medical_History_Document__cId"/>
+                  </value>
+                </argument>
+                <argument id="ReviewingAuthorityValue"/>
+                <argument id="DeniedNotesValue">
+                  <value class="variable">
+                    <path element="DeniedMedicalDocumentRow"/>
+                    <path element="Denied_Notes__c"/>
+                  </value>
+                </argument>
+                <argument id="DenialReasonValue">
+                  <value class="variable">
+                    <path element="DeniedMedicalDocumentRow"/>
+                    <path element="Denial_Reason__c"/>
+                  </value>
+                </argument>
+                <argument id="DeniedDateValue">
+                  <value class="variable">
+                    <path element="DeniedMedicalDocumentRow"/>
+                    <path element="Denied_Date__c"/>
+                  </value>
+                </argument>
+                <argument id="reuseConnectionName">
+                  <value class="value" valueClass="string">Admin</value>
+                </argument>
+              </arguments>
+              <outputArguments>
+                <outputArgument id="denied_Medical_Document__cId">
+                  <name class="value" valueClass="string">denied_Medical_Document__cId</name>
+                </outputArgument>
+              </outputArguments>
+            </caseCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" guid="abc8e211-bab6-4730-b9fd-352aaa9009d8" name="StepGroup" testItemId="26" title="Read Appointment Excel and Set Values">
+      <arguments>
+        <argument id="description">
+          <value class="value" valueClass="string">Read Appointment Excel and Set Values</value>
+        </argument>
+      </arguments>
+      <parameterValueSources>
+        <parameterValueSource variableName="AppointmentRows" variableScope="Test">
+          <cacheToken>C:/Users/Chilly/ProvarP3/ProvarTraining/templates/All Objects2.xlsx;1743132594609</cacheToken>
+          <cachedParameters>
+            <apiParam name="Appointment_Date__c"/>
+            <apiParam name="Assigned_Staff__c"/>
+            <apiParam name="CreatedById"/>
+            <apiParam name="CreatedDate"/>
+            <apiParam name="CurrencyIsoCode"/>
+            <apiParam name="Id"/>
+            <apiParam name="IsDeleted"/>
+            <apiParam name="LastActivityDate"/>
+            <apiParam name="LastModifiedById"/>
+            <apiParam name="LastModifiedDate"/>
+            <apiParam name="LastReferencedDate"/>
+            <apiParam name="LastViewedDate"/>
+            <apiParam name="Name"/>
+            <apiParam name="Notes__c"/>
+            <apiParam name="OwnerId"/>
+            <apiParam name="Related_Appeal__c"/>
+            <apiParam name="Related_Claim__c"/>
+            <apiParam name="Service_Type__c"/>
+            <apiParam name="Status__c"/>
+          </cachedParameters>
+          <sourceValue class="excelTarget" namesLocation="FirstRowOfRange" whereComparison="EqualTo">
+            <workbookPath class="value" valueClass="string">templates/All Objects2.xlsx</workbookPath>
+            <worksheetName class="value" valueClass="string">Appointment__c</worksheetName>
+          </sourceValue>
+        </parameterValueSource>
+      </parameterValueSources>
+      <clauses>
+        <clause name="hidden" testItemId="27"/>
+      </clauses>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" guid="4435fe70-4ddc-439a-b0d1-b1b5fc3e3797" name="ForEach" testItemId="32" title="For Each: {AppointmentRows}=&gt;AppointmentRow">
+      <arguments>
+        <argument id="list">
+          <value class="variable">
+            <path element="AppointmentRows"/>
+          </value>
+        </argument>
+        <argument id="fromItem">
+          <value class="value" valueClass="decimal">1</value>
+        </argument>
+        <argument id="valueName">
+          <value class="value" valueClass="string">AppointmentRow</value>
+        </argument>
+        <argument id="continueOnFailure"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="33">
+          <steps>
+            <caseCall guid="6ab7145f-89ff-4229-a099-ab413f613dcb" testCaseId="586bdf38-ff19-4eb0-8b8c-c8e92b7c36a8" testCasePath="tests/Callable/UI/Create Appointment - UI.testcase" testItemId="37">
+              <arguments>
+                <argument id="MedicalExamValue">
+                  <value class="variable">
+                    <path element="AppointmentRow"/>
+                    <path element="Service_Type__c"/>
+                  </value>
+                </argument>
+                <argument id="AppointmentDateValue">
+                  <value class="variable">
+                    <path element="AppointmentRow"/>
+                    <path element="Appointment_Date__c"/>
+                  </value>
+                </argument>
+                <argument id="ScheduledValue">
+                  <value class="variable">
+                    <path element="AppointmentRow"/>
+                    <path element="Status__c"/>
+                  </value>
+                </argument>
+                <argument id="NotesValue">
+                  <value class="variable">
+                    <path element="AppointmentRow"/>
+                    <path element="Notes__c"/>
+                  </value>
+                </argument>
+                <argument id="RelatedClaimValue"/>
+                <argument id="RelatedAppealValue"/>
+                <argument id="AssignedDoctorValue">
+                  <value class="variable">
+                    <path element="doctor__cId"/>
+                  </value>
+                </argument>
+                <argument id="VeteranValue">
+                  <value class="variable">
+                    <path element="VetName"/>
+                  </value>
+                </argument>
+                <argument id="reuseConnectionName">
+                  <value class="value" valueClass="string">Admin</value>
+                </argument>
+              </arguments>
+            </caseCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
+  </steps>
+  <params>
+    <param name="VetName" passwordVariableAllowed="true" title="VetName">
+      <summary/>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+  </params>
+  <args>
+    <argument id="VetName">
+      <value class="value" valueClass="string">Vet-00000012</value>
+    </argument>
+  </args>
+</testCase>

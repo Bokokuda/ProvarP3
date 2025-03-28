@@ -25,7 +25,11 @@
         <argument id="closeAllPrimaryTabs">
           <value class="value" valueClass="boolean">true</value>
         </argument>
-        <argument id="reuseConnectionName"/>
+        <argument argId="46983d38-91e1-45f7-a0e5-485e7bb7725f" id="reuseConnectionName">
+          <value class="variable">
+            <path element="reuseConnectionName"/>
+          </value>
+        </argument>
         <argument id="alreadyOpenBehaviour">
           <value class="value" valueClass="string">Fail</value>
         </argument>
@@ -158,7 +162,7 @@
       <clauses>
         <clause name="substeps" testItemId="6">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="e3d43254-cba0-4cdc-bc15-b5a396603d39" name="UiDoAction" testItemId="7" title="Set the Medical_History Name field to test">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="e3d43254-cba0-4cdc-bc15-b5a396603d39" name="UiDoAction" testItemId="7" title="Set the Medical_History Name field to {MedicalHistoryNameValue}">
               <arguments>
                 <argument id="locator">
                   <value class="uiLocator" uri="ui:locator?name=Name&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DMedical_History__c%26field%3DName"/>
@@ -166,8 +170,10 @@
                 <argument id="interaction">
                   <value class="uiInteraction" uri="ui:interaction?name=set"/>
                 </argument>
-                <argument id="value">
-                  <value class="value" valueClass="string">test</value>
+                <argument argId="7501d92a-9e44-4705-b364-5eb3ed79d8d1" id="value">
+                  <value class="variable">
+                    <path element="MedicalHistoryNameValue"/>
+                  </value>
                 </argument>
                 <argument id="blur">
                   <value class="value" valueClass="boolean">false</value>
@@ -192,23 +198,28 @@
                 </argument>
                 <argument id="locatorParams"/>
                 <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Set the Medical_History Name field to test</value>
+                  <value class="value" valueClass="string">Set the Medical_History Name field to {MedicalHistoryNameValue}</value>
                 </argument>
               </arguments>
               <generatedParameters>
-                <apiParam group="value" name="value" passwordVariableAllowed="true" title="Value">
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Medical_History__c&amp;field=Name" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
                   <summary>The value to be populated.</summary>
                   <type>
-                    <textType/>
+                    <textType>
+                      <constraints>
+                        <valueConstraint name="maxLength">80</valueConstraint>
+                        <valueConstraint name="maxLines">1</valueConstraint>
+                      </constraints>
+                    </textType>
                   </type>
                 </apiParam>
-                <apiParam group="value" name="blur" title="Tab off field">
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
                   <summary>Whether the tab key should be pressed after the value is populated.</summary>
                   <type>
                     <booleanType/>
                   </type>
                 </apiParam>
-                <apiParam group="value" name="pressEnter" title="Press Enter">
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
                   <summary>Whether the Enter key should be pressed after the value is populated.</summary>
                   <type>
                     <booleanType/>
@@ -216,7 +227,127 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="b18c95d6-461c-442c-9764-85716a97a29c" name="UiDoAction" testItemId="10" title="Click the Save button">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="330f3554-179b-4067-ace1-49e1a59b9930" name="UiDoAction" testItemId="9" title="Set the Primary Care Doctor reference to {PrimaryCareDoctorValue}">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Primary_Care_Doctor__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DMedical_History__c%26field%3DPrimary_Care_Doctor__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument argId="af593d2c-6adc-4a90-9dfc-b5660b599ad4" id="value">
+                  <value class="variable">
+                    <path element="PrimaryCareDoctorValue"/>
+                  </value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="autoRetry">
+                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
+                </argument>
+                <argument id="locatorParams"/>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Primary Care Doctor reference to {PrimaryCareDoctorValue}</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Medical_History__c&amp;field=Primary_Care_Doctor__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="a07823a1-39d6-4283-a221-506fac0b812e" name="UiDoAction" testItemId="8" title="Set the Related Veteran reference to {RelatedVeteranValue}">
+              <arguments>
+                <argument id="locator">
+                  <value class="uiLocator" uri="ui:locator?name=Related_Veteran__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DMedical_History__c%26field%3DRelated_Veteran__c"/>
+                </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                </argument>
+                <argument argId="c8c01adc-5965-4071-a657-afcd09e33a04" id="value">
+                  <value class="variable">
+                    <path element="RelatedVeteranValue"/>
+                  </value>
+                </argument>
+                <argument id="blur">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="pressEnter">
+                  <value class="value" valueClass="boolean">false</value>
+                </argument>
+                <argument id="captureBefore">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="string">false</value>
+                </argument>
+                <argument id="beforeWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="afterWait">
+                  <value class="uiWait" uri="default"/>
+                </argument>
+                <argument id="autoRetry">
+                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
+                </argument>
+                <argument id="locatorParams"/>
+                <argument id="interactionDescription">
+                  <value class="value" valueClass="string">Set the Related Veteran reference to {RelatedVeteranValue}</value>
+                </argument>
+              </arguments>
+              <generatedParameters>
+                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Medical_History__c&amp;field=Related_Veteran__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
+                  <summary>The value to be populated.</summary>
+                  <type>
+                    <textType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="923ab715-9d6d-4e22-a48a-bbdfc7c48f58" name="UiDoAction" testItemId="11" title="Click the Save button">
               <arguments>
                 <argument id="locator">
                   <value class="uiLocator" uri="ui:locator?name=save&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DMedical_History__c%26action%3Dsave"/>
@@ -270,122 +401,6 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="330f3554-179b-4067-ace1-49e1a59b9930" name="UiDoAction" testItemId="9" title="Set the Primary Care Doctor reference to der">
-              <arguments>
-                <argument id="locator">
-                  <value class="uiLocator" uri="ui:locator?name=Primary_Care_Doctor__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DMedical_History__c%26field%3DPrimary_Care_Doctor__c"/>
-                </argument>
-                <argument id="interaction">
-                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
-                </argument>
-                <argument id="value">
-                  <value class="value" valueClass="string">der</value>
-                </argument>
-                <argument id="blur">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="pressEnter">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="captureBefore">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="captureAfter">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="beforeWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="afterWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="autoRetry">
-                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
-                </argument>
-                <argument id="locatorParams"/>
-                <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Set the Primary Care Doctor reference to der</value>
-                </argument>
-              </arguments>
-              <generatedParameters>
-                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Medical_History__c&amp;field=Primary_Care_Doctor__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
-                  <summary>The value to be populated.</summary>
-                  <type>
-                    <textType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
-                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
-                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-              </generatedParameters>
-            </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="a07823a1-39d6-4283-a221-506fac0b812e" name="UiDoAction" testItemId="8" title="Set the Related Veteran reference to tohm">
-              <arguments>
-                <argument id="locator">
-                  <value class="uiLocator" uri="ui:locator?name=Related_Veteran__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DMedical_History__c%26field%3DRelated_Veteran__c"/>
-                </argument>
-                <argument id="interaction">
-                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
-                </argument>
-                <argument id="value">
-                  <value class="value" valueClass="string">tohm</value>
-                </argument>
-                <argument id="blur">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="pressEnter">
-                  <value class="value" valueClass="boolean">false</value>
-                </argument>
-                <argument id="captureBefore">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="captureAfter">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="beforeWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="afterWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="autoRetry">
-                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
-                </argument>
-                <argument id="locatorParams"/>
-                <argument id="interactionDescription">
-                  <value class="value" valueClass="string">Set the Related Veteran reference to tohm</value>
-                </argument>
-              </arguments>
-              <generatedParameters>
-                <apiParam group="value" modelBinding="sf:ui:binding:object?object=Medical_History__c&amp;field=Related_Veteran__c" name="value" passwordVariableAllowed="true" seq="10000" title="Value">
-                  <summary>The value to be populated.</summary>
-                  <type>
-                    <textType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
-                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
-                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-              </generatedParameters>
-            </apiCall>
           </steps>
         </clause>
       </clauses>
@@ -412,4 +427,80 @@
       </generatedParameters>
     </apiCall>
   </steps>
+  <params>
+    <param linkedToUrl="provar:hasvalue:7501d92a-9e44-4705-b364-5eb3ed79d8d1" modelBinding="sf:ui:binding:object?object=Medical_History__c&amp;field=Name" name="MedicalHistoryNameValue" passwordVariableAllowed="true" title="MedicalHistoryNameValue">
+      <summary>The value to be populated.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="maxLength">80</valueConstraint>
+            <valueConstraint name="maxLines">1</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:af593d2c-6adc-4a90-9dfc-b5660b599ad4" modelBinding="sf:ui:binding:object?object=Medical_History__c&amp;field=Primary_Care_Doctor__c" name="PrimaryCareDoctorValue" passwordVariableAllowed="true" title="PrimaryCareDoctorValue">
+      <summary>The value to be populated.</summary>
+      <type>
+        <textType/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:c8c01adc-5965-4071-a657-afcd09e33a04" modelBinding="sf:ui:binding:object?object=Medical_History__c&amp;field=Related_Veteran__c" name="RelatedVeteranValue" passwordVariableAllowed="true" title="RelatedVeteranValue">
+      <summary>The value to be populated.</summary>
+      <type>
+        <textType/>
+      </type>
+    </param>
+    <param linkedToUrl="provar:hasvalue:46983d38-91e1-45f7-a0e5-485e7bb7725f" name="reuseConnectionName" passwordVariableAllowed="true" title="Override Connection">
+      <summary>The name of an already opened connect to re-use.</summary>
+      <type>
+        <connectionType>
+          <constraints>
+            <valueConstraint name="variableName">true</valueConstraint>
+            <valueConstraint name="requiredCapabilities">sfSoapConnect</valueConstraint>
+          </constraints>
+        </connectionType>
+      </type>
+    </param>
+  </params>
+  <outputParams>
+    <param name="medical_History__cId" passwordVariableAllowed="true" title="medical_History__cId">
+      <summary>The name under which the resulting Object Id will be stored.</summary>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+          </constraints>
+        </textType>
+      </type>
+      <sourceValue class="variable">
+        <path element="medical_History__cId"/>
+      </sourceValue>
+    </param>
+  </outputParams>
+  <args>
+    <argument id="MedicalHistoryNameValue">
+      <value class="funcCall" id="UniqueId">
+        <argument id="length">
+          <value class="value" valueClass="decimal">10</value>
+        </argument>
+        <argument id="format">
+          <value class="variable">
+            <path element="ALPHA"/>
+          </value>
+        </argument>
+      </value>
+    </argument>
+    <argument id="PrimaryCareDoctorValue"/>
+    <argument id="RelatedVeteranValue"/>
+    <argument id="reuseConnectionName">
+      <value class="value" valueClass="string">Admin</value>
+    </argument>
+  </args>
+  <outputArgs>
+    <outputArgument id="medical_History__cId">
+      <name class="value" valueClass="string">medical_History__cId</name>
+    </outputArgument>
+  </outputArgs>
 </testCase>
