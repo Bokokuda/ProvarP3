@@ -23,5 +23,8 @@ public class VeteranManagementHomePage {
 	@LinkType()
 	@FindBy(xpath = "//div[contains(@class, 'active') and contains(@class, 'open') and (contains(@class, 'forceModal') or contains(@class, 'uiModal'))][last()]//a[normalize-space(.)='VeteranCare']")
 	public WebElement veteranCareSiteCard;
+	@ButtonType()
+	@FindBy(xpath = "//button[normalize-space(.)='Cancel and close']")
+	public WebElement cancelAndClose;
 			
 }

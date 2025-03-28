@@ -18,5 +18,23 @@
       "default" : true
     } ],
     "elements" : [ ]
+  }, {
+    "componentId" : "a54281e7-628b-4baa-beb8-c47761c72284",
+    "type" : "component::5c6b2d69-4033-48fd-9f45-8a0f567a8251",
+    "label" : "Edit Profile button",
+    "parameters" : [ {
+      "name" : "class",
+      "value" : "secondary-button edit-btn slds-p-vertical_x-large",
+      "comparisonType" : "contains",
+      "locatable" : true,
+      "default" : false
+    }, {
+      "name" : "label",
+      "value" : "Edit Profile",
+      "comparisonType" : "equals",
+      "locatable" : true,
+      "default" : true
+    } ],
+    "elements" : [ ]
   } ]
 }
